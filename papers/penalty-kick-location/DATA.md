@@ -1,0 +1,23 @@
+# Data notes
+
+- substitute: no
+- paper_source:
+  - The authors' shot-level penalty file: 536 penalties, men's UEFA Champions League and Europa League, 2015–2020 (Table 2 n = 536, p10).
+  - Published by the authors at https://github.com/sdsander-syr/soccer_pk_shot_location (linked on p1 of the paper).
+- page_source: the same files, fetched at run time from commit `ff98e29120d8597a6c6b21670fbe43ae7dc816b4` (2024-11-30 00:02 EST). Sizes are in bytes; all URLs return HTTP 200.
+  - pk_data_shotlevel_chrono.csv (31,680): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_data_shotlevel_chrono.csv
+  - pk_data_R.csv (532): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_data_R.csv
+  - goal.csv (574): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/goal.csv
+  - pk_lm.Rmd (1,823): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_lm.Rmd
+  - pk_lm_lasso.R (2,584): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_lm_lasso.R
+  - pk_resampling.R (475): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_resampling.R
+  - goal.Rmd (2,808): https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/goal.Rmd
+- license: none. The repo has no license file (GitHub API: license null), so treat it as all rights reserved.
+- seasons: 2015–2020 UCL and UEL; 536 kicks; 8 goal partitions.
+- commit_policy:
+  - Do NOT copy these CSVs or scripts into this repo, including any derived subset.
+  - The `{pyodide}` cells fetch the pinned raw URLs at run time (pyodide.http.pyfetch).
+  - Only numbers and charts we compute are shown.
+  - Ask the authors before any rehosting.
+- credit: "Penalty data: Uribe, Sanders, Ehrlich, Reade & Singleton (2025), github.com/sdsander-syr/soccer_pk_shot_location."
+- allowed_source_note: this source is not on PLAN.md's first-wave list (StatsBomb, Big Data Bowl, nflverse, Savant). It needs Jordan's explicit OK.
