@@ -51,17 +51,90 @@ One paper, four roles. The merge is Jordan's.
 
 ## First papers
 
-Five papers. Public data only, from StatsBomb open data, the NFL Big Data Bowl, nflverse, or Baseball Savant. Do not commit the raw dumps. Record the URL, license, and sample in `DATA.md`.
+Five papers, in this order. `papers/index.qmd` repeats the same order in its `paper-order` front matter and in the table. Do not sort either list another way.
 
-| Paper | Source for the rebuild | Substitute |
-| --- | --- | --- |
-| William Spearman, "Beyond Expected Goals," 2018 Sloan research paper. [Public copy](https://www.researchgate.net/publication/327139841_Beyond_Expected_Goals). Off-ball scoring from tracking. | [StatsBomb open data](https://github.com/statsbomb/open-data), event data and freeze frames. Follow that repository's license. | **Yes.** Event data is not the paper's tracking. The callout stays, and it says what does not transfer. |
-| Javier Fernández, Luke Bornn, and Dan Cervone, "Decomposing the Immeasurable Sport," 2019. [Conference page](https://www.sloansportsconference.com/research-papers/decomposing-the-immeasurable-sport-a-deep-learning-expected-possession-value-framework-for-soccer). Expected possession value from full tracking. | StatsBomb open data, same license rule. | **Yes.** A public event feed is not their tracking model. Say so in the callout. |
-| Michael Horton, "Learning Feature Representations from Football Tracking." [Conference page](https://www.sloansportsconference.com/research-papers/learning-feature-representations-from-football-tracking). The paper uses the 2019 NFL Big Data Bowl tracking release. | That same 2019 Big Data Bowl tracking release, under the competition's data terms. Link it. Do not commit the tracking files. | **No**, when the page uses that release. Any other feed, including nflverse play-by-play, is a substitute and must be labelled. |
-| Connor Heaton and Prasenjit Mitra, "Learning Contextual Event Embeddings to Predict Player Performance in the MLB." [Conference page](https://www.sloansportsconference.com/research-papers/learning-contextual-event-embeddings-to-predict-player-performance-in-the-mlb). Pitch sequences. | [Baseball Savant](https://baseballsavant.mlb.com/) pitch-level files, under MLB's terms. Do not commit a bulk download. | **Only if** the paper's file is not the public Savant extract (different seasons, or fields Savant does not publish). The brief says which, before the page claims they are the same data. |
-| A. W. Johnson, A. J. Stimpson, and T. Clark, "Turning the Tide: Big Plays and Psychological Momentum in the NFL," 2012 Sloan conference paper (poster). [Library record](https://hsl.mit.edu/biblio/turning-tide-big-plays-and-psychological-momentum-nfl-poster/). Play-by-play, 2000–2010. | [nflverse](https://github.com/nflverse) play-by-play. Attribute nflverse. Commit a small derived sample only if the license allows and `DATA.md` names it. | **Yes.** nflverse is a later public charting, not the authors' extract. Map seasons and fields in the callout. |
+Each paper already has a directory. None of them has `index.qmd` yet, so the site says the page is coming soon and links the directory. Do not link a missing page. A later paper can join this list only after one of these five has a merged page, unless Jordan asks otherwise.
 
-A later paper can join this list only after one of these five has a merged page, unless Jordan asks otherwise. Three to five is the bound for the start.
+| Order | Paper | Directory | Source for the rebuild | Substitute |
+| --- | --- | --- | --- | --- |
+| 1 | Penalty-kick location (Uribe, Sanders et al. 2025). Alivia Uribe, Shane Sanders, Justin Ehrlich, James J. Reade, and Carl Singleton. "Do Behavioral Considerations Cloud Penalty-Kick Location Optimization in Professional Soccer?" [PDF](https://cdn.prod.website-files.com/68d6be744d7efccc2207f571/68d6be744d7efccc220808ea_Do%20Behavioral%20Considerations%20Cloud%20Penalty-Kick%20Location%20Optimization%20in%20Professional%20Soccer.pdf). | `papers/penalty-kick-location/` | The authors' repository. Pin the commit in `DATA.md` and fetch it. | **No.** The page uses the authors' files. |
+| 2 | Going for Three (Clark, Johnson, Stimpson 2013). Torin K. Clark, Aaron W. Johnson, and Alexander J. Stimpson. "Going for Three: Predicting the Likelihood of Field Goal Success with Logistic Regression." [PDF](https://cdn.prod.website-files.com/68d6be744d7efccc2207f571/68d6be744d7efccc220807cf_SSAC13%20-%20Going%20for%20Three.pdf). | `papers/going-for-three/` | nflverse play-by-play, 2000–2011. The paper used Armchair Analysis. | **Yes.** nflverse is a later public charting, not the authors' extract. Map seasons and fields in the callout. |
+| 3 | What Does it Take to Call a Strike? (Green & Daniels 2014). Etan Green and David P. Daniels. "What Does it Take to Call a Strike? Three Biases in Umpire Decision Making." [PDF](https://cdn.prod.website-files.com/5f1af76ed86d6771ad48324b/5fee06d10c650358b6bee059_2014_SSAC_What-Does-it-Take-to-Call-a-Strike.pdf). | `papers/call-a-strike/` | Baseball Savant pitch-level files, 2009–2011, plus Retrosheet game logs for the home-plate umpire. | **Yes.** The authors' umpire-joined extract is not published. Savant has no umpire id. |
+| 4 | Wide Open Spaces (Fernández & Bornn 2018). "Wide Open Spaces: A statistical technique for measuring space creation in professional soccer." [PDF](https://cdn.prod.website-files.com/68d6be744d7efccc2207f571/68d6be744d7efccc22080634_A%20statistical%20technique%20for%20measuring%20space%20creation%20in%20professional%20soccer.pdf). | `papers/wide-open-spaces/` | Metrica Sports sample tracking data. The paper used private TRACAB tracking. | **Yes.** Anonymized sample matches are not the paper's tracking. Say what does not transfer. |
+| 5 | Fair darts handicaps (Chan, Fernandes, Walker 2024). Timothy C. Y. Chan, Craig Fernandes, and Rachael Walker. "No More Throwing Darts at the Wall: Developing Fair Handicaps for Darts using a Markov Decision Process." [PDF](https://cdn.prod.website-files.com/68d6be744d7efccc2207f571/68d6be744d7efccc22080818_193939%20-%20No%20More%20Throwing%20Darts%20at%20the%20Wall-%20Developing%20Fair%20Handicaps%20for%20Darts.pdf). | `papers/darts-handicaps/` | OptimalDarts, the Haugh and Wang skill-model fits. Pin the commit in `DATA.md` and fetch it. | **No.** The page uses those fits. The paper does not name the commit. |
+
+Record the URL, license, and sample in `DATA.md`.
+
+## Allowed sources
+
+A rebuild may use the sources in this list. The first five papers use the source named for them above. Do not commit raw dumps.
+
+Files without a clear license are linked at a pinned commit and fetched at build or run time, never copied into the repo.
+
+License notes for the four sources added with this list were read from each source's own page on 2 November 2026. Where a source states no license, this file does not invent one. Pins below are the commits already recorded in that paper's `DATA.md`. A note in that file that still says the source is waiting on approval is superseded by this list.
+
+### StatsBomb open data
+
+- Link: https://github.com/statsbomb/open-data
+- License: follow the license in that repository.
+- Credit: credit StatsBomb as that license requires.
+
+### NFL Big Data Bowl
+
+- Link: the named release the page uses. Record that URL in `DATA.md`.
+- License: that release's data terms.
+- Credit: name the release on the page. Do not commit the tracking files.
+
+### nflverse
+
+- Link: https://github.com/nflverse
+- License: nflverse-data is Creative Commons Attribution 4.0 International (CC-BY-4.0), as stated by that repository's license.
+- Credit: `Play-by-play data: nflverse (github.com/nflverse/nflverse-data), licensed CC-BY-4.0.`
+
+### Baseball Savant
+
+- Link: https://baseballsavant.mlb.com/
+- License: MLB's terms. Do not commit a bulk download.
+- Credit: `Pitch data: MLB Advanced Media via Baseball Savant (baseballsavant.mlb.com).`
+
+### Penalty-kick authors' repository
+
+- Link: https://github.com/sdsander-syr/soccer_pk_shot_location
+- Pin: `ff98e29120d8597a6c6b21670fbe43ae7dc816b4`
+- License: none stated. The repository page reports no license, and that commit contains no license file.
+- Credit: `Penalty data: Uribe, Sanders, Ehrlich, Reade & Singleton (2025), github.com/sdsander-syr/soccer_pk_shot_location.`
+- These files have no clear license, so the pinned-commit rule applies.
+
+### OptimalDarts
+
+- Link: https://github.com/wangchunsem/OptimalDarts
+- Pin: `f68bedcc592b4bcfda69f6d72d69aede91ebaff1`
+- License: none stated. The repository page reports no license. `readme.txt` at that commit describes the fits and the code and states no license.
+- Credit: `Skill models: M. B. Haugh & C. Wang, 'Play like the pros? Solving the game of darts as a dynamic zero sum game' (github.com/wangchunsem/OptimalDarts).`
+- These files have no clear license, so the pinned-commit rule applies. Do not paste the repository's code into `code/`.
+
+### Metrica Sports sample tracking data
+
+- Link: https://github.com/metrica-sports/sample-data
+- Pin: `e706dd506b360d69d9d123d5b8026e7294b13996`
+- License: no license file. The README at that commit, under "Legal stuff", states: "Please be responsible with the use of this data." and "If you use it for anything public, please aknowledge the source." That is the source's spelling. It is not a license.
+- Credit: `Tracking and event data: Metrica Sports sample data (github.com/metrica-sports/sample-data). Players and teams are anonymized.`
+- These files have no clear license, so the pinned-commit rule applies. The credit line is how the page meets the README's request to name the source.
+
+### Retrosheet
+
+- Link: https://www.retrosheet.org/
+- Terms: https://www.retrosheet.org/notice.txt
+- Game logs: https://www.retrosheet.org/gamelogs/ — the strike paper uses `gl2009.zip`, `gl2010.zip`, and `gl2011.zip`, as recorded in `papers/call-a-strike/DATA.md`.
+- License: the notice says recipients are free to make any desired use of the information, including selling it, giving it away, or producing a commercial product based upon the data. The one requirement is that the following statement appear prominently. Show it verbatim, including the two spaces after the first period and the quotes around the URL:
+
+```
+     The information used here was obtained free of
+     charge from and is copyrighted by Retrosheet.  Interested
+     parties may contact Retrosheet at "www.retrosheet.org".
+```
+
+- Credit: that statement. It is the attribution line on every page that uses Retrosheet.
 
 ## Definition of done
 

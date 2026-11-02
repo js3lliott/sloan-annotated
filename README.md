@@ -61,4 +61,15 @@ papers/_template/           the one page template, rendered as a demo
 
 ## Data
 
-Allowed public sources for the first papers: [StatsBomb open data](https://github.com/statsbomb/open-data), NFL Big Data Bowl releases, [nflverse](https://github.com/nflverse), and [Baseball Savant](https://baseballsavant.mlb.com/). Follow each source's license. Do not commit raw league dumps. If the page is not using the paper's own data, it must show a callout titled **Rebuilt on substitute data**.
+Allowed sources for the first papers are listed in `PLAN.md`, with the link, the license or terms, and the credit line for each:
+
+- [StatsBomb open data](https://github.com/statsbomb/open-data)
+- NFL Big Data Bowl releases
+- [nflverse](https://github.com/nflverse)
+- [Baseball Savant](https://baseballsavant.mlb.com/)
+- [Penalty-kick authors' repository](https://github.com/sdsander-syr/soccer_pk_shot_location)
+- [OptimalDarts](https://github.com/wangchunsem/OptimalDarts)
+- [Metrica Sports sample data](https://github.com/metrica-sports/sample-data)
+- [Retrosheet](https://www.retrosheet.org/)
+
+Follow each source's license. Files without a clear license are linked at a pinned commit and fetched at build or run time, never copied into the repo. Do not commit raw dumps. If the page is not using the paper's own data, it must show a callout titled **Rebuilt on substitute data**.
