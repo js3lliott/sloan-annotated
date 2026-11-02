@@ -1,0 +1,16 @@
+---
+description: Public-data licenses and the required substitute-data callout
+globs: papers/**/*
+alwaysApply: false
+---
+
+First-wave sources are StatsBomb open data, a named NFL Big Data Bowl release, nflverse, and Baseball Savant. Read the license. Do not commit raw tracking dumps, full Statcast extracts, or the StatsBomb tree.
+
+Every paper has `DATA.md` with `substitute: yes` or `substitute: no`, the paper's source, our source, the license, and the sample.
+
+- `substitute: no` means the page uses the paper's own public files. Do not show the substitute callout.
+- `substitute: yes` means the page must include a warning callout with class `substitute-data` and the heading "Rebuilt on substitute data." Name both datasets, what transfers, and what will not match the paper.
+
+Public data can still be substitute data. Tracking rebuilt on event data is a substitute. nflverse in place of an author-built play-by-play file is a substitute. Baseball Savant in place of a private Statcast extract is a substitute unless the brief shows the files are the same.
+
+Redraw paper figures, or reproduce them only when the license allows. Cite the figure number.

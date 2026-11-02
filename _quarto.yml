@@ -1,0 +1,68 @@
+project:
+  type: website
+  output-dir: _site
+  # Files and directories that start with "_" are skipped unless listed.
+  # papers/*/*.qmd picks up future papers/<name>/index.qmd pages.
+  render:
+    - index.qmd
+    - about.qmd
+    - papers/index.qmd
+    - papers/_template/index.qmd
+    - "papers/*/*.qmd"
+  resources:
+    - assets/glossary.json
+    - assets/learning.js
+    - assets/favicon.svg
+
+# Read by the vendored quarto-live extension (r-wasm/quarto-live 0.1.3).
+# This release contributes the html format plus its filter. It does not
+# register a format named live-html. An empty pyodide.resources list stops
+# the filter from mounting every project resource into the browser filesystem.
+pyodide:
+  resources: []
+  cell-options:
+    autorun: false
+
+live:
+  show-hints: true
+  show-solutions: true
+  grading: true
+
+website:
+  title: "Sloan Annotated"
+  description: "Annotated, runnable rebuilds of MIT Sloan Sports Analytics Conference research papers."
+  site-url: https://js3lliott.github.io/sloan-annotated/
+  favicon: assets/favicon.svg
+  repo-url: https://github.com/js3lliott/sloan-annotated
+  repo-actions: [edit, issue]
+  page-navigation: true
+  navbar:
+    background: "#1b2430"
+    foreground: "#f6f3ec"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: papers/index.qmd
+        text: Papers
+      - href: about.qmd
+        text: About
+      - href: papers/_template/index.qmd
+        text: Template
+  page-footer:
+    center: "Sloan Annotated. Jordan approves every merge."
+
+lang: en
+
+format:
+  html:
+    theme: styles/theme.scss
+    toc: true
+    toc-location: right
+    toc-title: On this page
+    include-in-header: includes/head.html
+    include-after-body: includes/after-body.html
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    highlight-style: github
+    linestretch: 1.55

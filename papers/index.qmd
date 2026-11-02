@@ -1,0 +1,19 @@
+---
+title: Papers
+---
+
+Each finished paper is one page, built from [the page template](_template/index.qmd). That template is rendered so the patterns can be clicked through. A directory whose name starts with `_` is not a paper. Every other `papers/<name>/index.qmd` is.
+
+Quarto skips underscore paths in automatic listings, so this page lists the template by hand. When a rebuild merges, add a row to the table.
+
+## First papers
+
+These are the rebuilds to write first. None of them are pages yet. The scout writes `papers/<name>/BRIEF.md`. The builder turns that brief into the page in one pull request. Details and the substitute-data rule are in `PLAN.md` in the repository.
+
+| Paper | Public data | Substitute? |
+| --- | --- | --- |
+| [Beyond Expected Goals](https://www.researchgate.net/publication/327139841_Beyond_Expected_Goals), William Spearman, 2018 | [StatsBomb open data](https://github.com/statsbomb/open-data) | Yes. The paper uses tracking, not this event feed. |
+| [Decomposing the Immeasurable Sport](https://www.sloansportsconference.com/research-papers/decomposing-the-immeasurable-sport-a-deep-learning-expected-possession-value-framework-for-soccer), Javier Fernández, Luke Bornn, and Dan Cervone, 2019 | StatsBomb open data | Yes. The paper's expected possession value uses full tracking. |
+| [Learning Feature Representations from Football Tracking](https://www.sloansportsconference.com/research-papers/learning-feature-representations-from-football-tracking), Michael Horton | 2019 NFL Big Data Bowl tracking release | No, if the page uses that release. Another feed would have to be labelled. |
+| [Learning Contextual Event Embeddings to Predict Player Performance in the MLB](https://www.sloansportsconference.com/research-papers/learning-contextual-event-embeddings-to-predict-player-performance-in-the-mlb), Connor Heaton and Prasenjit Mitra | [Baseball Savant](https://baseballsavant.mlb.com/) pitch-level data | Only if the paper's file is not the public Savant extract. The brief has to say which. |
+| [Turning the Tide: Big Plays and Psychological Momentum in the NFL](https://hsl.mit.edu/biblio/turning-tide-big-plays-and-psychological-momentum-nfl-poster/), A. W. Johnson, A. J. Stimpson, and T. Clark, 2012 | [nflverse](https://github.com/nflverse) play-by-play | Yes. nflverse is a later public charting, not the authors' file. |

@@ -1,0 +1,59 @@
+---
+title: "Sloan Annotated"
+---
+
+Annotated rebuilds of MIT Sloan Sports Analytics Conference research papers. Each paper becomes a page you can read, run, and push back on in the browser. The stack is a Quarto website: Python in the page through Pyodide, and charts in Plotly or D3. No account, no kernel.
+
+The work is inspired by annotated implementations, and aimed at learning. A page is finished when a reader can see the question, the data, the method, the paper's figure next to ours, and where the rebuild held or broke.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+<div class="layer-card">
+
+### Intro
+
+<p class="kicker">Layer 1</p>
+
+A short open, with an animation of the question, before any fitting.
+
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="layer-card">
+
+### Guided build
+
+<p class="kicker">Layer 2</p>
+
+The method in order. Runnable code, a blank to fill, a slider on an assumption, one real play, and a quick check.
+
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="layer-card">
+
+### Advanced
+
+<p class="kicker">Layer 3</p>
+
+A second pass: a sensitivity, a baseline, or a case the paper already treats as fragile.
+
+</div>
+:::
+
+:::
+
+## Open the template
+
+The shelf starts empty. The [page template](papers/_template/index.qmd) is the working example of every section and widget. Copy it for each paper. Do not invent a second layout.
+
+The [paper list](papers/index.qmd) names the first five rebuilds and the public data each one is allowed to use. StatsBomb open data, the NFL Big Data Bowl releases, nflverse, and Baseball Savant are the sources. A page that is not on the paper's own data says so, in a callout titled "Rebuilt on substitute data."
+
+## How a paper gets on the site
+
+A scout writes `papers/<name>/BRIEF.md`. A builder turns that brief into code and one interactive page, in one pull request. A checker reads the page against the paper. Jordan approves every merge. Coding agents do not merge.
+
+The repository README has the preview command and the directory map. `PLAN.md` is the longer spec.

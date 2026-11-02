@@ -1,0 +1,16 @@
+<script>
+(function () {
+  function siteRoot() {
+    var scripts = document.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].getAttribute("src") || "";
+      var at = src.indexOf("site_libs/");
+      if (at !== -1) return src.slice(0, at);
+    }
+    return "";
+  }
+  var loader = document.createElement("script");
+  loader.src = siteRoot() + "assets/learning.js";
+  document.body.appendChild(loader);
+})();
+</script>

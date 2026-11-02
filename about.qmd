@@ -1,0 +1,29 @@
+---
+title: About
+---
+
+Sloan Annotated rebuilds research papers from the MIT Sloan Sports Analytics Conference as pages you work through, not as posts you skim. The conference papers are the object. The page is a reading of one paper: the question, the data, the method in code, the figure beside the original, and a plain account of what survived the rebuild.
+
+## What a page is for
+
+Someone who does not already live in the paper should be able to leave with three things. They should know the question. They should have run the core step themselves. They should know whether our figure is the paper's result or a cousin built on other data.
+
+Three layers sit on every page. The intro is short and animated. The guided build is the method, with code, a blank, a slider, a real play, and a quick check. The advanced section is for the second reading.
+
+Terms that the page depends on are marked in the text. Hover or focus one for a definition from the shared glossary.
+
+## Who merges
+
+Jordan approves every merge. A pull request can be ready, reviewed, and still waiting. That is the process. Agents that write pages do not merge them. Reviewers do not merge them on Jordan's behalf.
+
+## Data
+
+The first papers use public data: StatsBomb open data, NFL Big Data Bowl releases, nflverse, and Baseball Savant. "Public" is not the same as "the data in the paper." When a rebuild uses a substitute, the page carries a callout titled "Rebuilt on substitute data" and says what does not transfer. When the page uses the paper's own public files, that callout stays off.
+
+Raw league dumps do not go in this repository. `DATA.md` inside the paper directory records the source, the license, and the sample.
+
+## Stack
+
+One GitHub repository. A Quarto website. Plotly and D3 in the browser. Pyodide, through the vendored Quarto Live extension, for the code cells. GitHub Actions renders the site and, on `main`, publishes it with the official GitHub Pages actions. The pages stay static. Nothing here needs a Python server at request time.
+
+Claude Code and Cursor do the implementation against `CLAUDE.md`, `PLAN.md`, and the template.
