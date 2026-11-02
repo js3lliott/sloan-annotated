@@ -1400,7 +1400,14 @@
       45,
       3126
     ],
-    "stadiums_at_least_5": 46
+    "stadiums_at_least_5": 46,
+    "lambeau": {
+      "stadium": "Lambeau Field",
+      "games": 103,
+      "seasons": 12,
+      "p45": 0.622054458198059,
+      "relative": -0.07147114927766911
+    }
   },
   "asset_bytes": {
     "play_by_play_2000.parquet": 13404971,

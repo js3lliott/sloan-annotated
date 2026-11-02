@@ -1515,10 +1515,21 @@ The slopes, other than the intercept, sit close to Table 1. The Vinatieri senten
 | Figure 2 slope | +0.017 per season, t(11) = 5.34 | +0.0178 per season, t(10) = 5.73 |
 | Experience, then season year | +0.017 (Wald 3.21), +0.037 (Wald 4.86) | +0.025 (Wald 2.06), +0.022 (Wald 2.09), on 11,316 kicks by the 55 kickers |
 | Stadium games and ANOVA | 3,410 games, 51 stadiums, F(50, 3089) = 131.8 | 3,186 games, 46 buildings after renames and surface splits, F(45, 3126) = 117.8 |
-| Lambeau, 45-yard difficulty | −0.063 (103 games) | −0.072 (103 games) |
+| Lambeau, 45-yard difficulty | −0.063 (103 games) | −0.071 (103 games) |
 | Denver | +0.0957 | +0.101 on 99 games, old Mile High and Invesco combined |
 | Turf domes | each +0.0461 | each +0.062, and they share one number because the flags match |
 | Classification cutoff | about 37%; naive classification wins | naive make-rate 80.8%; best cutoff on our fit is 46.5% at 81.6%; at 37% the model is 81.2% |
+
+Lambeau's −0.071 is the three-decimal form of the stored relative, not a separate guess. The cell prints `f"{LAMBEAU_RELATIVE:.3f}"` from `stadium.lambeau.relative` in `data/fit_report.json`, which is −0.071471.
+
+```{pyodide}
+#| edit: true
+#| caption: Lambeau relative difficulty, three decimals
+# stadium.lambeau.relative in data/fit_report.json, also stadium_difficulty.csv.
+LAMBEAU_RELATIVE = -0.07147114927766911
+print(f"{LAMBEAU_RELATIVE:.3f}")
+print(LAMBEAU_RELATIVE)
+```
 
 Thirty-two of the 55 added-points ranks match the paper's order exactly, including the first eight. Vinatieri is 15th at 0.073, against the paper's 16th at 0.0732. Succop's rank gap is +16, the same as the paper, and Scobee's is +15, also the same. Crosby is +15 against the paper's +14, and Gostkowski is −21 against −20. Jeff Reed is 20th at 0.058 per attempt, against the paper's 20th at 0.0558. He kicked at Heinz Field. nflverse codes 201 attempts there, 2003–2009, as `dessograss`. This page counts that label as grass, which is our classification: Steelers.com describes DD GrassMaster as 97 percent natural grass. Christie has 118 attempts here and 120 in the paper, and he swaps places with Novak at the bottom. The largest remaining added-points gap is Tim Seder, −0.365 here and −0.342 in Table A.2, both at rank 53.
 

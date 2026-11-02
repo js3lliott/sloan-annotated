@@ -857,6 +857,9 @@ def main():
             "anova_F": stad["anova_F"],
             "anova_df": stad["anova_df"],
             "stadiums_at_least_5": stad["stadiums_at_least_5"],
+            "lambeau": next(
+                row for row in stad["rows"] if row["stadium"] == "Lambeau Field"
+            ),
         },
         "asset_bytes": asset_sizes,
         "precip_pattern": PRECIP_PATTERN,
