@@ -18,9 +18,9 @@ Jordan approves every merge. A pull request can be ready, reviewed, and still wa
 
 ## Data
 
-The first papers use public data: StatsBomb open data, NFL Big Data Bowl releases, nflverse, and Baseball Savant. "Public" is not the same as "the data in the paper." When a rebuild uses a substitute, the page carries a callout titled "Rebuilt on substitute data" and says what does not transfer. When the page uses the paper's own public files, that callout stays off.
+The first papers use the allowed sources in `PLAN.md`: StatsBomb open data, NFL Big Data Bowl releases, nflverse, Baseball Savant, the penalty-kick authors' repository, OptimalDarts, Metrica Sports sample tracking data, and Retrosheet. "Public" is not the same as "the data in the paper." When a rebuild uses a substitute, the page carries a callout titled "Rebuilt on substitute data" and says what does not transfer. When the page uses the paper's own public files, that callout stays off.
 
-Raw league dumps do not go in this repository. `DATA.md` inside the paper directory records the source, the license, and the sample.
+Raw dumps do not go in this repository. Files without a clear license are linked at a pinned commit and fetched at build or run time, never copied into the repo. `DATA.md` inside the paper directory records the source, the license, and the sample.
 
 ## Stack
 

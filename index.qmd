@@ -48,9 +48,9 @@ A second pass: a sensitivity, a baseline, or a case the paper already treats as 
 
 ## Open the template
 
-The shelf starts empty. The [page template](papers/_template/index.qmd) is the working example of every section and widget. Copy it for each paper. Do not invent a second layout.
+The first rebuild is [penalty-kick location](papers/penalty-kick-location/index.qmd). The [page template](papers/_template/index.qmd) is the working example of every section and widget. Copy it for each paper. Do not invent a second layout.
 
-The [paper list](papers/index.qmd) names the first five rebuilds and the public data each one is allowed to use. StatsBomb open data, the NFL Big Data Bowl releases, nflverse, and Baseball Savant are the sources. A page that is not on the paper's own data says so, in a callout titled "Rebuilt on substitute data."
+The [paper list](papers/index.qmd) names the first five rebuilds in build order. Each one already has a directory under `papers/`. The page is marked coming soon until `index.qmd` is there. Allowed sources are StatsBomb open data, NFL Big Data Bowl releases, nflverse, Baseball Savant, the penalty-kick authors' repository, OptimalDarts, Metrica Sports sample tracking data, and Retrosheet. The license and the credit line for each source are in `PLAN.md`. A page that is not on the paper's own data says so, in a callout titled "Rebuilt on substitute data."
 
 ## How a paper gets on the site
 

@@ -24,7 +24,7 @@ Scout spec for one paper. The builder turns this file plus the page template int
 
 ## Data this page will use
 
-- Source: [StatsBomb open data, a named NFL Big Data Bowl release, nflverse, or Baseball Savant]
+- Source: [an allowed source from the list in PLAN.md]
 - URL: [link]
 - License: [what we are allowed to copy, display, and commit]
 - Same data as the paper? [yes or no]

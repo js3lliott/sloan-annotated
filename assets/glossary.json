@@ -70,5 +70,45 @@
   "statcast": {
     "term": "Statcast",
     "definition": "MLB's tracking of the ball and the players. Baseball Savant publishes a public slice of it, including pitch-level and batted-ball fields."
+  },
+  "msne": {
+    "term": "mixed-strategy Nash equilibrium",
+    "definition": "A Nash equilibrium in which at least one player randomises, chosen so the other player gains nothing by switching."
+  },
+  "best-response": {
+    "term": "best response",
+    "definition": "The move that does best against a given move by the opponent."
+  },
+  "goal-partition": {
+    "term": "partition",
+    "definition": "One of the eight cells of the goal face used to bin penalty kicks."
+  },
+  "conversion-rate": {
+    "term": "conversion rate",
+    "definition": "Goals divided by attempts to a cell."
+  },
+  "leave-one-out": {
+    "term": "leave-one-out",
+    "definition": "A statistic computed without the current row, so that row cannot influence itself."
+  },
+  "off-target-share": {
+    "term": "off-target given not converted",
+    "definition": "Misses divided by misses plus saves for a cell: among the kicks that did not score, the share that missed the frame."
+  },
+  "ols": {
+    "term": "OLS",
+    "definition": "Ordinary least squares regression."
+  },
+  "lasso": {
+    "term": "Lasso",
+    "definition": "Regression that shrinks coefficients with an L1 penalty λ."
+  },
+  "bootstrap": {
+    "term": "bootstrap",
+    "definition": "Resampling the data to estimate how much a statistic varies."
+  },
+  "indifference-curve": {
+    "term": "indifference curve",
+    "definition": "Combinations of two rates the shooter likes equally."
   }
 }
