@@ -13,6 +13,11 @@ project:
     - assets/glossary.json
     - assets/learning.js
     - assets/favicon.svg
+    # Pages with categories request listings.json relative to the site root
+    # (quarto:offset + "listings.json"). Quarto only writes that file when a
+    # page defines a listing, and this site lists papers by hand. An empty
+    # index is the valid response, at preview's / and at /sloan-annotated/.
+    - listings.json
 
 # Read by the vendored quarto-live extension (r-wasm/quarto-live 0.1.3).
 # This release contributes the html format plus its filter. It does not
