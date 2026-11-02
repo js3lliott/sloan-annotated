@@ -6,6 +6,12 @@ Each finished paper is one page, built from [the page template](_template/index.
 
 Quarto skips underscore paths in automatic listings, so this page lists the template by hand. When a rebuild merges, add a row to the table.
 
+## On the site
+
+| Paper | Page | Substitute? |
+| --- | --- | --- |
+| Do Behavioral Considerations Cloud Penalty-Kick Location Optimization in Professional Soccer?, Uribe, Sanders, Ehrlich, Reade, and Singleton, 2025 | [Penalty-kick location](penalty-kick-location/index.qmd) | No. The page uses the authors' shot file, fetched when a code cell runs. |
+
 ## First papers
 
 These are the rebuilds to write first. None of them are pages yet. The scout writes `papers/<name>/BRIEF.md`. The builder turns that brief into the page in one pull request. Details and the substitute-data rule are in `PLAN.md` in the repository.
