@@ -1,0 +1,32 @@
+# Data notes
+
+- substitute: yes
+- paper_source:
+  - MLBAM PITCHf/x called pitches, 2009–2011 MLB regular seasons, joined to home-plate umpires.
+  - 75 umpires with ≥7,500 calls; N = 1,036,335 (p2 fn 2; Table 1, p6).
+  - The authors' extract is not published.
+- page_source:
+  - Baseball Savant Statcast search CSV, regular season (hfGT=R), 2009–2011, one request per day. Example day, HTTP 200, 1,440,774 bytes for 2009-06-01:
+    `curl -L "https://baseballsavant.mlb.com/statcast_search/csv?all=true&hfGT=R%7C&hfSea=2009%7C&player_type=pitcher&game_date_gt=2009-06-01&game_date_lt=2009-06-01&type=details" -o 2009-06-01.csv`
+    - Savant can't be pinned. Record the pull date and row counts in this file when built.
+  - Retrosheet game logs, for the home-plate umpire (fields 78–79, umpire ID and name). Join on date + home team + visiting team + game number (field 2).
+    - https://www.retrosheet.org/gamelogs/gl2009.zip (429,611 bytes)
+    - https://www.retrosheet.org/gamelogs/gl2010.zip (424,544 bytes)
+    - https://www.retrosheet.org/gamelogs/gl2011.zip (439,334 bytes)
+    - All return HTTP 200.
+- license:
+  - Savant: MLB Advanced Media terms of use.
+  - Retrosheet: free use with the required notice (below).
+  - Retrosheet is not on PLAN.md's first-wave source list; it needs Jordan's OK.
+- seasons: 2009–2011 regular season.
+  - Test-day sample: 2009-06-01 has 2,612 pitches, of which 1,479 are called.
+  - Full-sample counts are UNKNOWN until pulled (estimate about 1.2–1.3 GB raw).
+- commit_policy:
+  - Do not commit the bulk Savant pull or the Retrosheet zips.
+  - Proposed committed derived file, only if MLB terms permit: `papers/call-a-strike/data/called_grid_2009_2011.csv`.
+    - Nonzero cells of plate_x (0.1 ft bins over [−2, 2]) × normalized height (0.05 bins over [−0.5, 1.5]) × balls × strikes × last_pitch × stand, with n_called and n_strike. At most 115,200 rows, about 1–2 MB.
+    - Plus a small per-umpire table at 3 states on a coarse 8×8 grid.
+  - If the terms don't permit it, build the grid at deploy time from the URLs above.
+- credit:
+  - "Pitch data: MLB Advanced Media via Baseball Savant (baseballsavant.mlb.com)."
+  - "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org."

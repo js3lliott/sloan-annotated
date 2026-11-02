@@ -1,0 +1,29 @@
+# Data notes
+
+- substitute: yes
+- paper_source:
+  - TRACAB optical tracking, private: "20 matches of first and second Spanish division, consisting of 2.4 million examples" (p8) for the pitch-value net.
+  - FC Barcelona 1-1 Villarreal, January 2017, 845 situations (p12) for the match analysis.
+- page_source:
+  - Metrica Sports sample data, pinned commit `e706dd506b360d69d9d123d5b8026e7294b13996` (2021-04-15 12:34 EDT). Sizes are in bytes; all URLs return HTTP 200.
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_2/Sample_Game_2_RawEventsData.csv (153,897)
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_2/Sample_Game_2_RawTrackingData_Home_Team.csv (31,890,338)
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_2/Sample_Game_2_RawTrackingData_Away_Team.csv (29,627,711)
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_1/Sample_Game_1_RawEventsData.csv (139,446)
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_1/Sample_Game_1_RawTrackingData_Home_Team.csv (32,782,961)
+  - https://raw.githubusercontent.com/metrica-sports/sample-data/e706dd506b360d69d9d123d5b8026e7294b13996/data/Sample_Game_1/Sample_Game_1_RawTrackingData_Away_Team.csv (32,782,073)
+  - Not used: Sample_Game_3 (EPTS format): tracking.txt 53,443,115; events.json 1,709,486; metadata.xml 81,806.
+- license:
+  - No license file (GitHub API: license null).
+  - README "Legal stuff": "Please be responsible with the use of this data." and "If you use it for anything public, please aknowledge the source."
+  - Metrica is not on PLAN.md's first-wave source list; it needs Jordan's OK.
+- seasons:
+  - Two anonymized matches (Sample Games 1–2); 25 Hz; 105 × 68 m; coordinates 0–1.
+  - Walkthrough: Game 2, period 2, frames 73877–73995.
+- commit_policy:
+  - Do not commit raw tracking or event files.
+  - The build step fetches the pinned URLs and derives:
+    - (a) the walkthrough clip, about 20 s, about 0.5 MB;
+    - (b) the value-net weights JSON, about 100 KB.
+  - Commit (b), or (a), only if Jordan accepts Metrica's acknowledgement-only terms; otherwise generate both in CI.
+- credit: "Tracking and event data: Metrica Sports sample data (github.com/metrica-sports/sample-data). Players and teams are anonymized."

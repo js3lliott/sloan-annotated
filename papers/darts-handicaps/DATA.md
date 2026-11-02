@@ -1,0 +1,29 @@
+# Data notes
+
+- substitute: no
+- paper_source: Haugh & Wang fitted bivariate-Gaussian skill models (paper p5, ref [2]). Michael Smith is the "average professional" (p6). The paper doesn't name a file or commit.
+- page_source: the same fits, from https://github.com/wangchunsem/OptimalDarts, pinned commit `f68bedcc592b4bcfda69f6d72d69aede91ebaff1` (2022-02-08 08:14 EST). Fetched at build/run time. Sizes are in bytes; all URLs return HTTP 200:
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/ALL_Model_Fits.mat (22,400)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/Raw_Data.xlsx (26,447)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_board.py (12,204)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/evaluate_score_probability_player.py (8,465)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_solve_dp.py (37,659)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_get_aiming_grid.py (14,146)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_evaluate_policy.py (7,654)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_solve_zsg_gpu.py (59,225)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/function_tool.py (3,351)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/readme.txt (1,686)
+  - https://raw.githubusercontent.com/wangchunsem/OptimalDarts/f68bedcc592b4bcfda69f6d72d69aede91ebaff1/runexample.py (2,983)
+- license: none. The repo has no license file (GitHub API: license null), so treat it as all rights reserved.
+- seasons:
+  - Not stated in the paper.
+  - Model: 16 players' fits (ModelFit_All_Doubles, ModelFit_B50, ModelFit_T17…T20); Smith is player 11 (index 10).
+  - Smith's raw counts: aiming T20, 9,048 darts (3,761 T20, 4,624 S20, 203 ×15, 293 ×5, 58 ×3, 109 ×1); aiming D20, 206 D20 / 124 S20 / 136 missed, plus a few in other rows; aiming bull, 23 DB / 50 SB.
+- commit_policy:
+  - Do NOT copy the .mat, .xlsx or .py files into this repo.
+  - Our own code in `code/` reimplements the board and solver; do not paste repo code.
+  - Build-time scripts fetch the pinned URLs to precompute hit-probability tables and V*/policy JSON.
+  - Commit those derived tables only if Jordan accepts them as our own computed results; otherwise generate them in CI.
+  - `{pyodide}` cells that need Σ fetch ALL_Model_Fits.mat from the pinned URL at run time.
+- credit: "Skill models: M. B. Haugh & C. Wang, 'Play like the pros? Solving the game of darts as a dynamic zero sum game' (github.com/wangchunsem/OptimalDarts)."
+- allowed_source_note: this source is not on PLAN.md's first-wave list (StatsBomb, Big Data Bowl, nflverse, Savant). It needs Jordan's explicit OK.
