@@ -23,6 +23,7 @@ from fg_logistic import (
     WIND_CUTOFF_MPH,
     added_points,
     fit_logit,
+    is_turf,
     probability,
 )
 
@@ -180,7 +181,17 @@ def add_flags(frame, cold_cutoff):
     out["cold"] = (outdoors & temp.notna() & (temp < cold_cutoff)).astype(int)
     # Blank temperature unless the cold rule can see it. Domes stay missing.
     out["temp_out"] = temp.where(outdoors & temp.notna())
-    out["turf"] = (out["surface"].fillna("grass") != "grass").astype(int)
+    # Heinz Field `dessograss` is grass here. See is_turf in fg_logistic.py.
+    stadium = out["game_stadium"] if "game_stadium" in out.columns else None
+    surface = out["surface"]
+    if stadium is None:
+        out["turf"] = surface.fillna("grass").map(lambda label: is_turf(label)).astype(int)
+    else:
+        out["turf"] = [
+            is_turf(label, stad)
+            for label, stad in zip(surface, stadium)
+        ]
+        out["turf"] = pd.Series(out["turf"], index=out.index).astype(int)
     out["alt"] = (
         (out["home_team"] == "DEN") | (out["game_id"] == "2005_04_SF_ARI")
     ).astype(int)
@@ -554,6 +565,35 @@ def main():
     coefs = coef_dict(beta)
     table = wald_table(beta, errors)
 
+    # Footnote 3 counts "chance of rain" as precipitation. The paper says that
+    # alternate coding barely moves the coefficient. Ours does not.
+    weather = kicks["weather"].fillna("").str.lower()
+    keyword = weather.str.contains(PRECIP_PATTERN, regex=True)
+    chance_rows = kicks.copy()
+    chance_rows["precip"] = (chance_rows["outdoors"] & keyword).astype(int)
+    chance_groups = (
+        chance_rows.groupby(["dist", "cold", "turf", "alt", "precip", "windy"], as_index=False)
+        .agg(made=("made", "sum"), n=("made", "size"))
+    )
+    chance_fit = [
+        (r.dist, r.cold, r.turf, r.alt, r.precip, r.windy, r.made, r.n)
+        for r in chance_groups.itertuples(index=False)
+    ]
+    beta_chance, errors_chance = fit_logit(chance_fit)
+    chance_wald = wald_table(beta_chance, errors_chance)
+    precip_note = {
+        "baseline": next(row for row in table if row["name"] == "precipitation"),
+        "chance_counted": next(row for row in chance_wald if row["name"] == "precipitation"),
+        "chance_attempts": int(chance_rows["precip"].sum()),
+    }
+
+    heinz = kicks[(kicks["game_stadium"] == "Heinz Field") & (kicks["surface"] == "dessograss")]
+    dessograss_note = {
+        "attempts": int(len(heinz)),
+        "seasons": sorted(int(year) for year in heinz["season"].unique()),
+        "turf_flag": int(heinz["turf"].max()) if len(heinz) else None,
+    }
+
     # Temperature file for the cold-cutoff slider. temp is blank when the
     # cold rule cannot see it (dome, closed roof, or missing).
     temp_groups = kicks.copy()
@@ -820,6 +860,8 @@ def main():
         },
         "asset_bytes": asset_sizes,
         "precip_pattern": PRECIP_PATTERN,
+        "dessograss": dessograss_note,
+        "precip_chance": precip_note,
     }
     # desc may not have been loaded. Fill from a targeted read if empty.
     if not report["vinatieri"]["desc"]:
@@ -844,6 +886,8 @@ def main():
     )
     write_legend_svg(FIGURES / "our-rebuild.svg", coefs, PAPER)
 
+    print("dessograss", dessograss_note)
+    print("precip chance", precip_note["baseline"]["estimate"], precip_note["chance_counted"]["estimate"], precip_note["chance_counted"]["p"])
     print("attempts", attempts, "made", made, "missed", missed, "blocked", blocked)
     print("agg", len(groups), agg_path.stat().st_size, "temp", len(temp_agg), temp_path.stat().st_size)
     for row in table:

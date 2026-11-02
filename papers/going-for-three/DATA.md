@@ -27,13 +27,13 @@
 - commit_policy:
   - Do not commit the raw parquet files.
   - Small derived files are allowed under CC-BY-4.0 with attribution. `code/build_fg_table.py` regenerates them from the URLs above. Byte sizes in the table were re-checked when that script downloaded the files; they matched.
-  - `data/fg_agg_2000_2011.csv`: 726 rows. Columns `dist, cold, turf, alt, precip, windy, made, n`. `made` is the number of makes and `n` is the number of attempts. This is the table the logistic fit uses.
+  - `data/fg_agg_2000_2011.csv`: 724 rows. Columns `dist, cold, turf, alt, precip, windy, made, n`. `made` is the number of makes and `n` is the number of attempts. This is the table the logistic fit uses.
   - `data/fg_by_temp.csv`: temperature left blank unless the cold rule can see it, so the cold cutoff can be refit. Same other flags.
   - `data/kicker_ranks.csv`, `data/season_added_points.csv`, `data/stadium_difficulty.csv`: summaries from that fit. `data/fit_report.json` is the script's audit of the headline comparisons.
   - No per-kick file is committed.
 - derived_rules:
   - cold = temp < 50 and roof outdoors/open;
-  - turf = surface ≠ grass (nflverse `dessograss`, 201 attempts, all at Heinz Field, counts as turf);
+  - turf = surface ≠ grass, except Heinz Field `dessograss`. Those 201 attempts, seasons 2003–2009, are grass on this page. That is our classification. Steelers.com (11 Feb 2008) calls DD GrassMaster "a 97 percent natural grass surface and root system stabilized by synthetic fibers" (https://www.steelers.com/news/steelers-will-continue-to-play-on-grass-at-heinz-field-959603);
   - alt = home_team DEN, or game_id 2005_04_SF_ARI;
   - precip = weather matches rain|snow|shower|drizzle|sleet|flurr|storm, without "chance", outdoors. That word list is ours. The paper does not print one;
   - windy = wind ≥ 10, outdoors.

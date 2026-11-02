@@ -6,69 +6,69 @@
   "missed": 2011,
   "blocked": 277,
   "missing_temp_share": 0.2364416043050534,
-  "agg_rows": 726,
-  "temp_rows": 5910,
-  "agg_bytes": 14335,
-  "temp_bytes": 118192,
+  "agg_rows": 724,
+  "temp_rows": 5866,
+  "agg_bytes": 14285,
+  "temp_bytes": 117312,
   "coefficients": [
     {
       "name": "intercept",
-      "estimate": 5.6094540991283175,
-      "se": 0.13265976979128474,
-      "wald": 42.28451555399004,
+      "estimate": 5.613987123196371,
+      "se": 0.13254814682620217,
+      "wald": 42.354323750429046,
       "p": 0.0
     },
     {
       "name": "distance",
-      "estimate": -0.10618210348303157,
-      "se": 0.0029916876502499436,
-      "wald": -35.492376175755005,
-      "p": 6.444331004300352e-276
+      "estimate": -0.10625584243138861,
+      "se": 0.002992536514868202,
+      "wald": -35.50694933995429,
+      "p": 3.839908542417139e-276
     },
     {
       "name": "cold",
-      "estimate": -0.3545129492396072,
-      "se": 0.06030843675321585,
-      "wald": -5.878330932209138,
-      "p": 4.144237798047719e-09
+      "estimate": -0.3468118694969759,
+      "se": 0.060315208224875995,
+      "wald": -5.749990420391837,
+      "p": 8.924850580044733e-09
     },
     {
       "name": "turf",
-      "estimate": 0.29151777093464715,
-      "se": 0.052843091908772954,
-      "wald": 5.516667560594608,
-      "p": 3.4548808020782786e-08
+      "estimate": 0.294993093886277,
+      "se": 0.05336430346273998,
+      "wald": 5.527910508421552,
+      "p": 3.24067275698913e-08
     },
     {
       "name": "altitude",
-      "estimate": 0.6949687581899945,
-      "se": 0.15688786108733868,
-      "wald": 4.429716571909339,
-      "p": 9.435701432396257e-06
+      "estimate": 0.6905322822994546,
+      "se": 0.15677108384049998,
+      "wald": 4.404717154357414,
+      "p": 1.0592198929966546e-05
     },
     {
       "name": "precipitation",
-      "estimate": -0.22497027398050154,
-      "se": 0.10406689919816929,
-      "wald": -2.161785118168094,
-      "p": 0.030634743100031593
+      "estimate": -0.22382293486309482,
+      "se": 0.10407815628584938,
+      "wald": -2.150527477142926,
+      "p": 0.03151351494809178
     },
     {
       "name": "wind",
-      "estimate": -0.1659547326219513,
-      "se": 0.05625283292468304,
-      "wald": -2.9501577786162025,
-      "p": 0.0031761168748040084
+      "estimate": -0.16505842363390183,
+      "se": 0.05627146371390548,
+      "wald": -2.9332527135439266,
+      "p": 0.0033543074219503206
     }
   ],
   "rounded_coefficients": {
-    "intercept": 5.609,
+    "intercept": 5.614,
     "distance": -0.106,
-    "cold": -0.355,
-    "turf": 0.292,
-    "altitude": 0.695,
-    "precipitation": -0.225,
-    "wind": -0.166
+    "cold": -0.347,
+    "turf": 0.295,
+    "altitude": 0.691,
+    "precipitation": -0.224,
+    "wind": -0.165
   },
   "vinatieri": {
     "game_id": "2001_19_OAK_NE",
@@ -89,35 +89,35 @@
     "made": 1
   },
   "probabilities": {
-    "refit_snow_wind": 0.5214422125095117,
-    "refit_mild": 0.6966211664199697,
-    "refit_lift": 0.175178953910458,
-    "refit_our_wind_off": 0.5626136405701472,
+    "refit_snow_wind": 0.5241763786025875,
+    "refit_mild": 0.6968778350111814,
+    "refit_lift": 0.1727014564085939,
+    "refit_our_wind_off": 0.5650884055014704,
     "paper_printed_snow_wind": 0.6039617331092246,
     "paper_printed_mild": 0.7654867829393263,
     "paper_printed_lift": 0.16152504983010163,
-    "rounded_snow_wind": 0.5232332570433342,
-    "rounded_mild": 0.6982545626546941,
-    "rounded_lift": 0.17502130561135987,
-    "added_points_make_refit": 1.4356733624714648,
-    "added_points_make_rounded": 1.4303002288699973
+    "rounded_snow_wind": 0.5269737865749146,
+    "rounded_mild": 0.6993069928586161,
+    "rounded_lift": 0.17233320628370152,
+    "added_points_make_refit": 1.4274708641922376,
+    "added_points_make_rounded": 1.4190786402752562
   },
   "walk": [
     {
       "step": "distance",
-      "probability": 0.6966211664199697
+      "probability": 0.6968778350111814
     },
     {
       "step": "cold",
-      "probability": 0.616979312751599
+      "probability": 0.619084060473627
     },
     {
       "step": "precipitation",
-      "probability": 0.5626136405701472
+      "probability": 0.5650884055014704
     },
     {
       "step": "wind",
-      "probability": 0.5214422125095117
+      "probability": 0.5241763786025875
     }
   ],
   "kickers_over_50": 55,
@@ -130,7 +130,7 @@
       "attempts": 224,
       "makes": 192,
       "make_pct": 0.8571428571428571,
-      "added_per": 0.2595520143522901,
+      "added_per": 0.2601767181248466,
       "rank_added": 1,
       "rank_pct": 4,
       "gap": 3,
@@ -145,7 +145,7 @@
       "attempts": 224,
       "makes": 193,
       "make_pct": 0.8616071428571429,
-      "added_per": 0.20938744891835542,
+      "added_per": 0.20738421699621928,
       "rank_added": 2,
       "rank_pct": 3,
       "gap": 1,
@@ -160,7 +160,7 @@
       "attempts": 87,
       "makes": 73,
       "make_pct": 0.8390804597701149,
-      "added_per": 0.2037936273012211,
+      "added_per": 0.20194822652585923,
       "rank_added": 3,
       "rank_pct": 13,
       "gap": 10,
@@ -175,7 +175,7 @@
       "attempts": 322,
       "makes": 270,
       "make_pct": 0.8385093167701864,
-      "added_per": 0.16348560740547136,
+      "added_per": 0.16174912258784854,
       "rank_added": 4,
       "rank_pct": 14,
       "gap": 10,
@@ -190,7 +190,7 @@
       "attempts": 129,
       "makes": 106,
       "make_pct": 0.8217054263565892,
-      "added_per": 0.14183044100105505,
+      "added_per": 0.1404894308411991,
       "rank_added": 5,
       "rank_pct": 24,
       "gap": 19,
@@ -205,7 +205,7 @@
       "attempts": 251,
       "makes": 212,
       "make_pct": 0.8446215139442231,
-      "added_per": 0.12388592153875039,
+      "added_per": 0.12373521436664484,
       "rank_added": 6,
       "rank_pct": 8,
       "gap": 2,
@@ -220,7 +220,7 @@
       "attempts": 384,
       "makes": 307,
       "make_pct": 0.7994791666666666,
-      "added_per": 0.11615300747008339,
+      "added_per": 0.11639658715029079,
       "rank_added": 7,
       "rank_pct": 32,
       "gap": 25,
@@ -235,7 +235,7 @@
       "attempts": 57,
       "makes": 50,
       "make_pct": 0.8771929824561403,
-      "added_per": 0.11356111746138599,
+      "added_per": 0.11167080717999471,
       "rank_added": 8,
       "rank_pct": 1,
       "gap": -7,
@@ -245,34 +245,34 @@
       "paper_name": "Garrett Hartley"
     },
     {
-      "kicker": "R. Succop",
-      "key": "R.Succop",
-      "attempts": 85,
-      "makes": 69,
-      "make_pct": 0.8117647058823529,
-      "added_per": 0.09949113974364365,
-      "rank_added": 9,
-      "rank_pct": 26,
-      "gap": 17,
-      "paper_added": 0.0911,
-      "paper_make_pct": 0.8118,
-      "paper_attempts": 85,
-      "paper_name": "Ryan Succop"
-    },
-    {
       "kicker": "M. Stover",
       "key": "M.Stover",
       "attempts": 335,
       "makes": 291,
       "make_pct": 0.8686567164179104,
-      "added_per": 0.09826773705440732,
-      "rank_added": 10,
+      "added_per": 0.09942855941539919,
+      "rank_added": 9,
       "rank_pct": 2,
-      "gap": -8,
+      "gap": -7,
       "paper_added": 0.101,
       "paper_make_pct": 0.8687,
       "paper_attempts": 335,
       "paper_name": "Matt Stover"
+    },
+    {
+      "kicker": "R. Succop",
+      "key": "R.Succop",
+      "attempts": 85,
+      "makes": 69,
+      "make_pct": 0.8117647058823529,
+      "added_per": 0.09710239675528425,
+      "rank_added": 10,
+      "rank_pct": 26,
+      "gap": 16,
+      "paper_added": 0.0911,
+      "paper_make_pct": 0.8118,
+      "paper_attempts": 85,
+      "paper_name": "Ryan Succop"
     },
     {
       "kicker": "D. Akers",
@@ -280,7 +280,7 @@
       "attempts": 445,
       "makes": 370,
       "make_pct": 0.8314606741573034,
-      "added_per": 0.0910085407560412,
+      "added_per": 0.08894476722446003,
       "rank_added": 11,
       "rank_pct": 18,
       "gap": 7,
@@ -295,7 +295,7 @@
       "attempts": 324,
       "makes": 269,
       "make_pct": 0.8302469135802469,
-      "added_per": 0.0848532856205173,
+      "added_per": 0.08291632095608018,
       "rank_added": 12,
       "rank_pct": 19,
       "gap": 7,
@@ -310,7 +310,7 @@
       "attempts": 322,
       "makes": 270,
       "make_pct": 0.8385093167701864,
-      "added_per": 0.0815646890893354,
+      "added_per": 0.08233939887817897,
       "rank_added": 13,
       "rank_pct": 14,
       "gap": 1,
@@ -325,7 +325,7 @@
       "attempts": 354,
       "makes": 292,
       "make_pct": 0.8248587570621468,
-      "added_per": 0.07712271741063002,
+      "added_per": 0.07488596618081927,
       "rank_added": 14,
       "rank_pct": 23,
       "gap": 9,
@@ -335,49 +335,34 @@
       "paper_name": "Ryan Longwell"
     },
     {
-      "kicker": "J. Wilkins",
-      "key": "J.Wilkins",
-      "attempts": 253,
-      "makes": 213,
-      "make_pct": 0.841897233201581,
-      "added_per": 0.07350728981617795,
-      "rank_added": 15,
-      "rank_pct": 11,
-      "gap": -4,
-      "paper_added": 0.0737,
-      "paper_make_pct": 0.8419,
-      "paper_attempts": 253,
-      "paper_name": "Jeff Wilkins"
-    },
-    {
       "kicker": "A. Vinatieri",
       "key": "A.Vinatieri",
       "attempts": 376,
       "makes": 317,
       "make_pct": 0.8430851063829787,
-      "added_per": 0.07123405210581663,
-      "rank_added": 16,
+      "added_per": 0.07268957828390957,
+      "rank_added": 15,
       "rank_pct": 10,
-      "gap": -6,
+      "gap": -5,
       "paper_added": 0.0732,
       "paper_make_pct": 0.8431,
       "paper_attempts": 376,
       "paper_name": "Adam Vinatieri"
     },
     {
-      "kicker": "N. Kaeding",
-      "key": "N.Kaeding",
-      "attempts": 215,
-      "makes": 181,
-      "make_pct": 0.8418604651162791,
-      "added_per": 0.07044347698013702,
-      "rank_added": 17,
-      "rank_pct": 12,
+      "kicker": "J. Wilkins",
+      "key": "J.Wilkins",
+      "attempts": 253,
+      "makes": 213,
+      "make_pct": 0.841897233201581,
+      "added_per": 0.07253945746944392,
+      "rank_added": 16,
+      "rank_pct": 11,
       "gap": -5,
-      "paper_added": 0.0692,
+      "paper_added": 0.0737,
       "paper_make_pct": 0.8419,
-      "paper_attempts": 215,
-      "paper_name": "Nate Kaeding"
+      "paper_attempts": 253,
+      "paper_name": "Jeff Wilkins"
     },
     {
       "kicker": "S. Graham",
@@ -385,14 +370,29 @@
       "attempts": 254,
       "makes": 217,
       "make_pct": 0.8543307086614174,
-      "added_per": 0.06972947385931816,
-      "rank_added": 18,
+      "added_per": 0.07197709452515458,
+      "rank_added": 17,
       "rank_pct": 5,
-      "gap": -13,
+      "gap": -12,
       "paper_added": 0.0705,
       "paper_make_pct": 0.8543,
       "paper_attempts": 254,
       "paper_name": "Shayne Graham"
+    },
+    {
+      "kicker": "N. Kaeding",
+      "key": "N.Kaeding",
+      "attempts": 215,
+      "makes": 181,
+      "make_pct": 0.8418604651162791,
+      "added_per": 0.07123043994841795,
+      "rank_added": 18,
+      "rank_pct": 12,
+      "gap": -6,
+      "paper_added": 0.0692,
+      "paper_make_pct": 0.8419,
+      "paper_attempts": 215,
+      "paper_name": "Nate Kaeding"
     },
     {
       "kicker": "M. Crosby",
@@ -400,7 +400,7 @@
       "attempts": 175,
       "makes": 139,
       "make_pct": 0.7942857142857143,
-      "added_per": 0.06269784503841298,
+      "added_per": 0.06093299579225,
       "rank_added": 19,
       "rank_pct": 34,
       "gap": 15,
@@ -410,34 +410,34 @@
       "paper_name": "Mason Crosby"
     },
     {
+      "kicker": "J. Reed",
+      "key": "J.Reed",
+      "attempts": 277,
+      "makes": 229,
+      "make_pct": 0.8267148014440433,
+      "added_per": 0.057965421396234354,
+      "rank_added": 20,
+      "rank_pct": 21,
+      "gap": 1,
+      "paper_added": 0.0558,
+      "paper_make_pct": 0.8267,
+      "paper_attempts": 277,
+      "paper_name": "Jeff Reed"
+    },
+    {
       "kicker": "J. Brown",
       "key": "J.Brown",
       "attempts": 291,
       "makes": 236,
       "make_pct": 0.8109965635738832,
-      "added_per": 0.05718742834638891,
-      "rank_added": 20,
+      "added_per": 0.054594307293195456,
+      "rank_added": 21,
       "rank_pct": 27,
-      "gap": 7,
+      "gap": 6,
       "paper_added": 0.0536,
       "paper_make_pct": 0.811,
       "paper_attempts": 291,
       "paper_name": "Josh Brown"
-    },
-    {
-      "kicker": "G. Anderson",
-      "key": "G.Anderson",
-      "attempts": 122,
-      "makes": 103,
-      "make_pct": 0.8442622950819673,
-      "added_per": 0.05041506604384948,
-      "rank_added": 21,
-      "rank_pct": 9,
-      "gap": -12,
-      "paper_added": 0.049,
-      "paper_make_pct": 0.8443,
-      "paper_attempts": 122,
-      "paper_name": "Gary Anderson"
     },
     {
       "kicker": "M. Vanderjagt",
@@ -445,7 +445,7 @@
       "attempts": 208,
       "makes": 177,
       "make_pct": 0.8509615384615384,
-      "added_per": 0.05009136537748371,
+      "added_per": 0.04844659165987915,
       "rank_added": 22,
       "rank_pct": 6,
       "gap": -16,
@@ -455,15 +455,30 @@
       "paper_name": "Mike Vanderjagt"
     },
     {
+      "kicker": "G. Anderson",
+      "key": "G.Anderson",
+      "attempts": 122,
+      "makes": 103,
+      "make_pct": 0.8442622950819673,
+      "added_per": 0.04839679120146008,
+      "rank_added": 23,
+      "rank_pct": 9,
+      "gap": -14,
+      "paper_added": 0.049,
+      "paper_make_pct": 0.8443,
+      "paper_attempts": 122,
+      "paper_name": "Gary Anderson"
+    },
+    {
       "kicker": "J. Scobee",
       "key": "J.Scobee",
       "attempts": 218,
       "makes": 171,
       "make_pct": 0.7844036697247706,
-      "added_per": 0.038452492689222253,
-      "rank_added": 23,
+      "added_per": 0.03903570177432677,
+      "rank_added": 24,
       "rank_pct": 39,
-      "gap": 16,
+      "gap": 15,
       "paper_added": 0.0377,
       "paper_make_pct": 0.7844,
       "paper_attempts": 218,
@@ -475,10 +490,10 @@
       "attempts": 241,
       "makes": 202,
       "make_pct": 0.8381742738589212,
-      "added_per": 0.027121976785629737,
-      "rank_added": 24,
+      "added_per": 0.025662838741628044,
+      "rank_added": 25,
       "rank_pct": 16,
-      "gap": -8,
+      "gap": -9,
       "paper_added": 0.0273,
       "paper_make_pct": 0.8382,
       "paper_attempts": 241,
@@ -490,29 +505,14 @@
       "attempts": 182,
       "makes": 151,
       "make_pct": 0.8296703296703297,
-      "added_per": 0.01490807363835497,
-      "rank_added": 25,
+      "added_per": 0.013068846121191538,
+      "rank_added": 26,
       "rank_pct": 20,
-      "gap": -5,
+      "gap": -6,
       "paper_added": 0.0078,
       "paper_make_pct": 0.8297,
       "paper_attempts": 182,
       "paper_name": "Morten Andersen"
-    },
-    {
-      "kicker": "J. Reed",
-      "key": "J.Reed",
-      "attempts": 277,
-      "makes": 229,
-      "make_pct": 0.8267148014440433,
-      "added_per": 0.011744902294305077,
-      "rank_added": 26,
-      "rank_pct": 21,
-      "gap": -5,
-      "paper_added": 0.0558,
-      "paper_make_pct": 0.8267,
-      "paper_attempts": 277,
-      "paper_name": "Jeff Reed"
     },
     {
       "kicker": "N. Rackers",
@@ -520,7 +520,7 @@
       "attempts": 344,
       "makes": 273,
       "make_pct": 0.7936046511627907,
-      "added_per": 0.004289468503773049,
+      "added_per": 0.0027927969606661956,
       "rank_added": 27,
       "rank_pct": 35,
       "gap": 8,
@@ -535,7 +535,7 @@
       "attempts": 183,
       "makes": 155,
       "make_pct": 0.8469945355191257,
-      "added_per": -0.0016898472147171535,
+      "added_per": -0.004097994295063386,
       "rank_added": 28,
       "rank_pct": 7,
       "gap": -21,
@@ -550,7 +550,7 @@
       "attempts": 285,
       "makes": 237,
       "make_pct": 0.8315789473684211,
-      "added_per": -0.017587099597369135,
+      "added_per": -0.01814217132226434,
       "rank_added": 29,
       "rank_pct": 17,
       "gap": -12,
@@ -560,34 +560,34 @@
       "paper_name": "John Carney"
     },
     {
-      "kicker": "R. Lindell",
-      "key": "R.Lindell",
-      "attempts": 324,
-      "makes": 262,
-      "make_pct": 0.808641975308642,
-      "added_per": -0.022652576497560504,
-      "rank_added": 30,
-      "rank_pct": 29,
-      "gap": -1,
-      "paper_added": -0.0271,
-      "paper_make_pct": 0.8086,
-      "paper_attempts": 324,
-      "paper_name": "Rian Lindell"
-    },
-    {
       "kicker": "J. Feely",
       "key": "J.Feely",
       "attempts": 350,
       "makes": 285,
       "make_pct": 0.8142857142857143,
-      "added_per": -0.02327764627728402,
-      "rank_added": 31,
+      "added_per": -0.02527495879457286,
+      "rank_added": 30,
       "rank_pct": 25,
-      "gap": -6,
+      "gap": -5,
       "paper_added": -0.028,
       "paper_make_pct": 0.8143,
       "paper_attempts": 350,
       "paper_name": "Jay Feely"
+    },
+    {
+      "kicker": "R. Lindell",
+      "key": "R.Lindell",
+      "attempts": 324,
+      "makes": 262,
+      "make_pct": 0.808641975308642,
+      "added_per": -0.02531647813842219,
+      "rank_added": 31,
+      "rank_pct": 29,
+      "gap": -2,
+      "paper_added": -0.0271,
+      "paper_make_pct": 0.8086,
+      "paper_attempts": 324,
+      "paper_name": "Rian Lindell"
     },
     {
       "kicker": "O. Mare",
@@ -595,7 +595,7 @@
       "attempts": 326,
       "makes": 264,
       "make_pct": 0.8098159509202454,
-      "added_per": -0.02581361384703284,
+      "added_per": -0.027334001548544793,
       "rank_added": 32,
       "rank_pct": 28,
       "gap": -4,
@@ -610,7 +610,7 @@
       "attempts": 311,
       "makes": 257,
       "make_pct": 0.8263665594855305,
-      "added_per": -0.026778875431041283,
+      "added_per": -0.027475457264296423,
       "rank_added": 33,
       "rank_pct": 22,
       "gap": -11,
@@ -625,7 +625,7 @@
       "attempts": 52,
       "makes": 41,
       "make_pct": 0.7884615384615384,
-      "added_per": -0.029318980291026513,
+      "added_per": -0.031818811243296136,
       "rank_added": 34,
       "rank_pct": 38,
       "gap": 4,
@@ -640,7 +640,7 @@
       "attempts": 162,
       "makes": 131,
       "make_pct": 0.808641975308642,
-      "added_per": -0.051048662371683484,
+      "added_per": -0.053713516298087766,
       "rank_added": 35,
       "rank_pct": 29,
       "gap": -6,
@@ -655,7 +655,7 @@
       "attempts": 181,
       "makes": 136,
       "make_pct": 0.7513812154696132,
-      "added_per": -0.053346571435781975,
+      "added_per": -0.05598366626226064,
       "rank_added": 36,
       "rank_pct": 47,
       "gap": 11,
@@ -670,7 +670,7 @@
       "attempts": 170,
       "makes": 133,
       "make_pct": 0.7823529411764706,
-      "added_per": -0.057610209831967706,
+      "added_per": -0.06010835430255351,
       "rank_added": 37,
       "rank_pct": 40,
       "gap": 3,
@@ -685,7 +685,7 @@
       "attempts": 87,
       "makes": 67,
       "make_pct": 0.7701149425287356,
-      "added_per": -0.05826700223380717,
+      "added_per": -0.0607607072294683,
       "rank_added": 38,
       "rank_pct": 44,
       "gap": 6,
@@ -700,7 +700,7 @@
       "attempts": 120,
       "makes": 95,
       "make_pct": 0.7916666666666666,
-      "added_per": -0.07500734957623667,
+      "added_per": -0.07590651058635535,
       "rank_added": 39,
       "rank_pct": 36,
       "gap": -3,
@@ -715,7 +715,7 @@
       "attempts": 59,
       "makes": 47,
       "make_pct": 0.7966101694915254,
-      "added_per": -0.07572631564871164,
+      "added_per": -0.07737069462541503,
       "rank_added": 40,
       "rank_pct": 33,
       "gap": -7,
@@ -725,34 +725,34 @@
       "paper_name": "Brett Conway"
     },
     {
+      "kicker": "D. Brien",
+      "key": "D.Brien",
+      "attempts": 114,
+      "makes": 90,
+      "make_pct": 0.7894736842105263,
+      "added_per": -0.07798960722268806,
+      "rank_added": 41,
+      "rank_pct": 37,
+      "gap": -4,
+      "paper_added": -0.0846,
+      "paper_make_pct": 0.7895,
+      "paper_attempts": 114,
+      "paper_name": "Doug Brien"
+    },
+    {
       "kicker": "L. Tynes",
       "key": "L.Tynes",
       "attempts": 212,
       "makes": 170,
       "make_pct": 0.8018867924528302,
-      "added_per": -0.07759130377872503,
-      "rank_added": 41,
+      "added_per": -0.07958805925223629,
+      "rank_added": 42,
       "rank_pct": 31,
-      "gap": -10,
+      "gap": -11,
       "paper_added": -0.0823,
       "paper_make_pct": 0.8019,
       "paper_attempts": 212,
       "paper_name": "Lawrence Tynes"
-    },
-    {
-      "kicker": "K. Brown",
-      "key": "K.Brown",
-      "attempts": 307,
-      "makes": 234,
-      "make_pct": 0.762214983713355,
-      "added_per": -0.08152673164633262,
-      "rank_added": 42,
-      "rank_pct": 45,
-      "gap": 3,
-      "paper_added": -0.0838,
-      "paper_make_pct": 0.7622,
-      "paper_attempts": 307,
-      "paper_name": "Kris Brown"
     },
     {
       "kicker": "N. Folk",
@@ -760,7 +760,7 @@
       "attempts": 149,
       "makes": 116,
       "make_pct": 0.7785234899328859,
-      "added_per": -0.08160919296533203,
+      "added_per": -0.08191180235607541,
       "rank_added": 43,
       "rank_pct": 41,
       "gap": -2,
@@ -770,19 +770,19 @@
       "paper_name": "Nick Folk"
     },
     {
-      "kicker": "D. Brien",
-      "key": "D.Brien",
-      "attempts": 114,
-      "makes": 90,
-      "make_pct": 0.7894736842105263,
-      "added_per": -0.0843204693362708,
+      "kicker": "K. Brown",
+      "key": "K.Brown",
+      "attempts": 307,
+      "makes": 234,
+      "make_pct": 0.762214983713355,
+      "added_per": -0.08306902767305377,
       "rank_added": 44,
-      "rank_pct": 37,
-      "gap": -7,
-      "paper_added": -0.0846,
-      "paper_make_pct": 0.7895,
-      "paper_attempts": 114,
-      "paper_name": "Doug Brien"
+      "rank_pct": 45,
+      "gap": 1,
+      "paper_added": -0.0838,
+      "paper_make_pct": 0.7622,
+      "paper_attempts": 307,
+      "paper_name": "Kris Brown"
     },
     {
       "kicker": "M. Gramatica",
@@ -790,7 +790,7 @@
       "attempts": 183,
       "makes": 139,
       "make_pct": 0.7595628415300546,
-      "added_per": -0.0984919810356047,
+      "added_per": -0.10017549161039584,
       "rank_added": 45,
       "rank_pct": 46,
       "gap": 1,
@@ -805,7 +805,7 @@
       "attempts": 178,
       "makes": 133,
       "make_pct": 0.7471910112359551,
-      "added_per": -0.11778997655874848,
+      "added_per": -0.11963348169254587,
       "rank_added": 46,
       "rank_pct": 48,
       "gap": 2,
@@ -820,7 +820,7 @@
       "attempts": 138,
       "makes": 107,
       "make_pct": 0.7753623188405797,
-      "added_per": -0.1395824164531444,
+      "added_per": -0.1416284539683465,
       "rank_added": 47,
       "rank_pct": 42,
       "gap": -5,
@@ -835,7 +835,7 @@
       "attempts": 80,
       "makes": 59,
       "make_pct": 0.7375,
-      "added_per": -0.14303643310383157,
+      "added_per": -0.14478174726419085,
       "rank_added": 48,
       "rank_pct": 50,
       "gap": 2,
@@ -850,7 +850,7 @@
       "attempts": 186,
       "makes": 144,
       "make_pct": 0.7741935483870968,
-      "added_per": -0.14372445459239658,
+      "added_per": -0.14526813556005555,
       "rank_added": 49,
       "rank_pct": 43,
       "gap": -6,
@@ -865,7 +865,7 @@
       "attempts": 90,
       "makes": 65,
       "make_pct": 0.7222222222222222,
-      "added_per": -0.16011342818302587,
+      "added_per": -0.16245363870621252,
       "rank_added": 50,
       "rank_pct": 51,
       "gap": 1,
@@ -880,7 +880,7 @@
       "attempts": 64,
       "makes": 46,
       "make_pct": 0.71875,
-      "added_per": -0.19906823124444803,
+      "added_per": -0.19993834119582235,
       "rank_added": 51,
       "rank_pct": 52,
       "gap": 1,
@@ -895,7 +895,7 @@
       "attempts": 118,
       "makes": 88,
       "make_pct": 0.7457627118644068,
-      "added_per": -0.21651740754233834,
+      "added_per": -0.21785465672972001,
       "rank_added": 52,
       "rank_pct": 49,
       "gap": -3,
@@ -910,7 +910,7 @@
       "attempts": 62,
       "makes": 44,
       "make_pct": 0.7096774193548387,
-      "added_per": -0.3629960431099827,
+      "added_per": -0.3648522816374776,
       "rank_added": 53,
       "rank_pct": 53,
       "gap": 0,
@@ -925,7 +925,7 @@
       "attempts": 75,
       "makes": 53,
       "make_pct": 0.7066666666666667,
-      "added_per": -0.39669177535284905,
+      "added_per": -0.3983004472955761,
       "rank_added": 54,
       "rank_pct": 54,
       "gap": 0,
@@ -940,7 +940,7 @@
       "attempts": 56,
       "makes": 37,
       "make_pct": 0.6607142857142857,
-      "added_per": -0.4612221668919947,
+      "added_per": -0.46267453131577285,
       "rank_added": 55,
       "rank_pct": 55,
       "gap": 0,
@@ -954,79 +954,79 @@
     {
       "season": 2000,
       "attempts": 947,
-      "added_per": -0.07507794318396505,
-      "added": -71.0988121952149
+      "added_per": -0.0770439240336017,
+      "added": -72.96059605982082
     },
     {
       "season": 2001,
       "attempts": 1005,
-      "added_per": -0.10086913757639507,
-      "added": -101.37348326427704
+      "added_per": -0.10294186190165862,
+      "added": -103.45657121116692
     },
     {
       "season": 2002,
       "attempts": 998,
-      "added_per": -0.10636620546034628,
-      "added": -106.15347304942559
+      "added_per": -0.10838680152781105,
+      "added": -108.17002792475543
     },
     {
       "season": 2003,
       "attempts": 1003,
-      "added_per": -0.03522193067041871,
-      "added": -35.327596462429966
+      "added_per": -0.0347446806732563,
+      "added": -34.84891471527607
     },
     {
       "season": 2004,
       "attempts": 904,
-      "added_per": -0.017821982257715127,
-      "added": -16.111071960974474
+      "added_per": -0.015012693414556773,
+      "added": -13.571474846759322
     },
     {
       "season": 2005,
       "attempts": 999,
-      "added_per": -0.013989364221492823,
-      "added": -13.97537485727133
+      "added_per": -0.01249848179556349,
+      "added": -12.485983313767926
     },
     {
       "season": 2006,
       "attempts": 992,
-      "added_per": 0.013737681667631261,
-      "added": 13.62778021429021
+      "added_per": 0.014435338165887601,
+      "added": 14.3198554605605
     },
     {
       "season": 2007,
       "attempts": 993,
-      "added_per": 0.04692388914402427,
-      "added": 46.5954219200161
+      "added_per": 0.04746498771147662,
+      "added": 47.13273279749628
     },
     {
       "season": 2008,
       "attempts": 1038,
-      "added_per": 0.11833129910585993,
-      "added": 122.82788847188262
+      "added_per": 0.12046392659826968,
+      "added": 125.04155580900392
     },
     {
       "season": 2009,
       "attempts": 968,
-      "added_per": -0.002168047830103461,
-      "added": -2.0986702995401503
+      "added_per": -0.0002464158739001087,
+      "added": -0.2385305659353052
     },
     {
       "season": 2010,
       "attempts": 994,
-      "added_per": 0.061831965729688985,
-      "added": 61.460973935310854
+      "added_per": 0.059866920768183174,
+      "added": 59.50771924357407
     },
     {
       "season": 2011,
       "attempts": 1052,
-      "added_per": 0.09660305850535608,
-      "added": 101.6264175476346
+      "added_per": 0.0948006039228601,
+      "added": 99.73023532684883
     }
   ],
-  "season_slope_per_year": 0.017733982030506027,
-  "season_slope_se": 0.003066019443439973,
-  "season_slope_t": 5.7840409552684,
+  "season_slope_per_year": 0.01784252255532942,
+  "season_slope_se": 0.003114659810647403,
+  "season_slope_t": 5.728562231526894,
   "season_slope_df": 10,
   "season_rows_at_least_20": 346,
   "best_seasons": [
@@ -1034,49 +1034,49 @@
       "kicker": "S. Janikowski",
       "season": 2009,
       "attempts": 29,
-      "added": 19.03387754042375
+      "added": 19.39115488081297
     },
     {
       "kicker": "N. Rackers",
       "season": 2005,
       "attempts": 42,
-      "added": 18.714276355975493
+      "added": 18.672897078440645
     },
     {
       "kicker": "S. Janikowski",
       "season": 2011,
       "attempts": 35,
-      "added": 18.503220229311708
+      "added": 18.47407806217624
     },
     {
       "kicker": "R. Bironas",
       "season": 2011,
       "attempts": 32,
-      "added": 18.13952842051356
+      "added": 18.05794952134616
     },
     {
       "kicker": "M. Vanderjagt",
       "season": 2003,
       "attempts": 40,
-      "added": 16.795200192873875
+      "added": 16.738666565486984
     },
     {
       "kicker": "C. Barth",
       "season": 2011,
       "attempts": 28,
-      "added": 15.396607561771798
+      "added": 15.354944466866405
     },
     {
       "kicker": "J. Hanson",
       "season": 2008,
       "attempts": 22,
-      "added": 15.030738754555154
+      "added": 14.996318432066104
     },
     {
       "kicker": "A. Vinatieri",
       "season": 2004,
       "attempts": 38,
-      "added": 14.463414479939129
+      "added": 14.87253670661649
     }
   ],
   "worst_seasons": [
@@ -1084,323 +1084,323 @@
       "kicker": "N. Folk",
       "season": 2009,
       "attempts": 28,
-      "added": -14.260455055071272
+      "added": -14.325602624545496
     },
     {
       "kicker": "N. Rackers",
       "season": 2000,
       "attempts": 21,
-      "added": -14.356431509856082
+      "added": -14.414742836600368
     },
     {
       "kicker": "N. Rackers",
       "season": 2001,
       "attempts": 28,
-      "added": -14.72297768535898
+      "added": -14.784486378728724
     },
     {
       "kicker": "T. Peterson",
       "season": 2002,
       "attempts": 21,
-      "added": -14.969974478960065
+      "added": -15.017893867204746
     },
     {
       "kicker": "K. Brown",
       "season": 2001,
       "attempts": 49,
-      "added": -15.182760912846366
+      "added": -15.329781861725372
     },
     {
       "kicker": "K. Brown",
       "season": 2009,
       "attempts": 32,
-      "added": -15.652000832482631
+      "added": -15.688972789526334
     },
     {
       "kicker": "W. Richey",
       "season": 2001,
       "attempts": 32,
-      "added": -16.244544187431938
+      "added": -16.28923210011064
     },
     {
       "kicker": "S. Marler",
       "season": 2003,
       "attempts": 33,
-      "added": -20.021179068673746
+      "added": -20.072473591061918
     }
   ],
   "classification": {
     "naive_all_make": 0.8076179265113933,
-    "at_0.50": 0.8133355755486421,
-    "at_0.37": 0.8111494156226352,
+    "at_0.50": 0.8135878247708737,
+    "at_0.37": 0.8115698309930212,
     "best_cutoff": 0.465,
-    "best_accuracy": 0.8154376524005718
+    "best_accuracy": 0.8156899016228033
   },
   "experience": {
     "attempts": 11316,
     "kickers": 55,
     "coefficients": {
-      "intercept": 5.564937018580851,
-      "distance": -0.10900207067506351,
-      "cold": -0.37996412315909495,
-      "turf": 0.2506249680559368,
-      "altitude": 0.6493245633644877,
-      "precipitation": -0.21842117818409568,
-      "wind": -0.1985745393172259,
-      "experience": 0.025058559081288564,
-      "season_year": 0.021861921525512158
+      "intercept": 5.565407376383294,
+      "distance": -0.10908005896321983,
+      "cold": -0.372993046396897,
+      "turf": 0.2590504340068086,
+      "altitude": 0.6476680581353019,
+      "precipitation": -0.21734214855287212,
+      "wind": -0.1967650377458988,
+      "experience": 0.025325548879961114,
+      "season_year": 0.02193391864178655
     },
     "se": {
-      "intercept": 0.1451758745313849,
-      "distance": 0.003153007507347786,
-      "cold": 0.06224535397405391,
-      "turf": 0.05499096839834204,
-      "altitude": 0.15858189003736825,
-      "precipitation": 0.10699060403013466,
-      "wind": 0.0581533613067369,
-      "experience": 0.012276325179535665,
-      "season_year": 0.0105049435815362
+      "intercept": 0.14511501528572762,
+      "distance": 0.0031540377870811513,
+      "cold": 0.062254999660876505,
+      "turf": 0.05552739860558638,
+      "altitude": 0.15845010976767973,
+      "precipitation": 0.1070023376940131,
+      "wind": 0.05817658992808467,
+      "experience": 0.012281800472586413,
+      "season_year": 0.010512397627737587
     },
     "wald": {
-      "intercept": 38.33238157885382,
-      "distance": -34.570824972996256,
-      "cold": -6.104296929815478,
-      "turf": 4.557566003211049,
-      "altitude": 4.094569456900033,
-      "precipitation": -2.0414986920026714,
-      "wind": -3.4146700182956,
-      "experience": 2.0412101109101095,
-      "season_year": 2.0811079427344397
+      "intercept": 38.35169892946746,
+      "distance": -34.58425875872783,
+      "cold": -5.991374964721115,
+      "turf": 4.665272289214475,
+      "altitude": 4.0875204131124665,
+      "precipitation": -2.0311906565479894,
+      "wind": -3.382203013087069,
+      "experience": 2.0620387814057874,
+      "season_year": 2.086481069162814
     }
   },
   "cold_cutoff": [
     {
       "cutoff": 30,
-      "cold": -0.36577567717563797,
-      "se": 0.1281149925391171,
-      "wald": -2.8550575535798934,
+      "cold": -0.34638967301031837,
+      "se": 0.12835647363125036,
+      "wald": -2.6986537041010177,
       "n_cold": 441
     },
     {
       "cutoff": 31,
-      "cold": -0.3734931332849924,
-      "se": 0.11455362112174367,
-      "wald": -3.2604218847700737,
+      "cold": -0.35263511392416513,
+      "se": 0.1146757063906064,
+      "wald": -3.0750638040373217,
       "n_cold": 553
     },
     {
       "cutoff": 32,
-      "cold": -0.42304367937977083,
-      "se": 0.10764758454295859,
-      "wald": -3.929894768897003,
+      "cold": -0.4050706799316716,
+      "se": 0.10774488117902307,
+      "wald": -3.759535260506975,
       "n_cold": 621
     },
     {
       "cutoff": 33,
-      "cold": -0.3493521780022799,
-      "se": 0.10423155800954763,
-      "wald": -3.3516929486008373,
+      "cold": -0.33158830482029605,
+      "se": 0.10432586063206382,
+      "wald": -3.1783903129228985,
       "n_cold": 691
     },
     {
       "cutoff": 34,
-      "cold": -0.3348738449183166,
-      "se": 0.10165838780912549,
-      "wald": -3.294109341445372,
+      "cold": -0.318419289153101,
+      "se": 0.10175977834888295,
+      "wald": -3.1291271887543024,
       "n_cold": 735
     },
     {
       "cutoff": 35,
-      "cold": -0.31208726813678206,
-      "se": 0.09535761207789428,
-      "wald": -3.272809179427112,
+      "cold": -0.29697132748055094,
+      "se": 0.0954213787429876,
+      "wald": -3.112209563439943,
       "n_cold": 847
     },
     {
       "cutoff": 36,
-      "cold": -0.35312860393752193,
-      "se": 0.089630004760037,
-      "wald": -3.9398480997846614,
+      "cold": -0.33770287428508466,
+      "se": 0.08970067109920908,
+      "wald": -3.7647753372055015,
       "n_cold": 968
     },
     {
       "cutoff": 37,
-      "cold": -0.3153407332155166,
-      "se": 0.08566443489353653,
-      "wald": -3.6811161318862484,
+      "cold": -0.3010178011139809,
+      "se": 0.08571237188163527,
+      "wald": -3.511952761378162,
       "n_cold": 1102
     },
     {
       "cutoff": 38,
-      "cold": -0.3343535337518386,
-      "se": 0.08283713344335389,
-      "wald": -4.036276001516614,
+      "cold": -0.3213608395145337,
+      "se": 0.0828993864765297,
+      "wald": -3.8765164999805726,
       "n_cold": 1179
     },
     {
       "cutoff": 39,
-      "cold": -0.33670347998517314,
-      "se": 0.08032279738321833,
-      "wald": -4.191879403536808,
+      "cold": -0.3240705497788762,
+      "se": 0.08036324750601699,
+      "wald": -4.032571602517834,
       "n_cold": 1274
     },
     {
       "cutoff": 40,
-      "cold": -0.3491837611427286,
-      "se": 0.07824234087614973,
-      "wald": -4.462849107434728,
+      "cold": -0.33521047706764356,
+      "se": 0.07826046712089865,
+      "wald": -4.2832670107859485,
       "n_cold": 1369
     },
     {
       "cutoff": 41,
-      "cold": -0.3374204017153621,
-      "se": 0.0755436536009043,
-      "wald": -4.466561857041595,
+      "cold": -0.32408372153811826,
+      "se": 0.07556857690346033,
+      "wald": -4.288604269366336,
       "n_cold": 1494
     },
     {
       "cutoff": 42,
-      "cold": -0.34089063397020747,
-      "se": 0.07407965549094235,
-      "wald": -4.601676826262884,
+      "cold": -0.3270211651459374,
+      "se": 0.07409319103530587,
+      "wald": -4.413646660056924,
       "n_cold": 1563
     },
     {
       "cutoff": 43,
-      "cold": -0.3463945308856023,
-      "se": 0.07099964485766168,
-      "wald": -4.878820613540327,
+      "cold": -0.3334054932347568,
+      "se": 0.07101096197466483,
+      "wald": -4.6951271178907374,
       "n_cold": 1724
     },
     {
       "cutoff": 44,
-      "cold": -0.35644978279043055,
-      "se": 0.06911682194867426,
-      "wald": -5.157207359087315,
+      "cold": -0.3445512685941649,
+      "se": 0.06913752936633688,
+      "wald": -4.983563511049141,
       "n_cold": 1832
     },
     {
       "cutoff": 45,
-      "cold": -0.34011702759669027,
-      "se": 0.06726894964083215,
-      "wald": -5.056077572381772,
+      "cold": -0.3287922344877761,
+      "se": 0.06727738528212576,
+      "wald": -4.887113747197449,
       "n_cold": 1963
     },
     {
       "cutoff": 46,
-      "cold": -0.31504551428170263,
-      "se": 0.06543658106981314,
-      "wald": -4.814516729497009,
+      "cold": -0.30498240459725495,
+      "se": 0.06544926776611365,
+      "wald": -4.659829131887699,
       "n_cold": 2141
     },
     {
       "cutoff": 47,
-      "cold": -0.33211119081779555,
-      "se": 0.06348883261674708,
-      "wald": -5.231017442431148,
+      "cold": -0.32314591654275077,
+      "se": 0.06351042703296748,
+      "wald": -5.0880765826847565,
       "n_cold": 2297
     },
     {
       "cutoff": 48,
-      "cold": -0.3366793819587134,
-      "se": 0.06233007924960145,
-      "wald": -5.401555493142842,
+      "cold": -0.328388120633965,
+      "se": 0.06234365337833235,
+      "wald": -5.267386539591164,
       "n_cold": 2417
     },
     {
       "cutoff": 49,
-      "cold": -0.3182970482338666,
-      "se": 0.06144732109766586,
-      "wald": -5.179998778595369,
+      "cold": -0.3099565085740418,
+      "se": 0.0614585978463614,
+      "wald": -5.043338433279803,
       "n_cold": 2537
     },
     {
       "cutoff": 50,
-      "cold": -0.35451294923960674,
-      "se": 0.06030843675321567,
-      "wald": -5.878330932209148,
+      "cold": -0.3468118694969762,
+      "se": 0.06031520822487571,
+      "wald": -5.749990420391868,
       "n_cold": 2665
     },
     {
       "cutoff": 51,
-      "cold": -0.308855155865465,
-      "se": 0.05892308457529266,
-      "wald": -5.241666455373802,
+      "cold": -0.30209507151701753,
+      "se": 0.05893320109422107,
+      "wald": -5.126059095857269,
       "n_cold": 2888
     },
     {
       "cutoff": 52,
-      "cold": -0.31966703492288806,
-      "se": 0.05784301823836026,
-      "wald": -5.52645841552735,
+      "cold": -0.3133134160387618,
+      "se": 0.05786362368062552,
+      "wald": -5.414687088525162,
       "n_cold": 3065
     },
     {
       "cutoff": 53,
-      "cold": -0.3044184007507707,
-      "se": 0.057006384752767064,
-      "wald": -5.340075538398255,
+      "cold": -0.29832197355442414,
+      "se": 0.05701947650718843,
+      "wald": -5.231931119480109,
       "n_cold": 3276
     },
     {
       "cutoff": 54,
-      "cold": -0.26646720332819807,
-      "se": 0.05633463814145242,
-      "wald": -4.7300774819768465,
+      "cold": -0.2604453577211009,
+      "se": 0.05635051838496675,
+      "wald": -4.621880422498168,
       "n_cold": 3453
     },
     {
       "cutoff": 55,
-      "cold": -0.26427313077968584,
-      "se": 0.05553500997856341,
-      "wald": -4.758676209506321,
+      "cold": -0.25697253673256215,
+      "se": 0.05556438028075715,
+      "wald": -4.624771039182379,
       "n_cold": 3667
     },
     {
       "cutoff": 56,
-      "cold": -0.242287395620244,
-      "se": 0.05490466600178581,
-      "wald": -4.4128744105712885,
+      "cold": -0.2356276927953983,
+      "se": 0.0549411898286769,
+      "wald": -4.288725699792016,
       "n_cold": 3887
     },
     {
       "cutoff": 57,
-      "cold": -0.2451396971760432,
-      "se": 0.054213665520498486,
-      "wald": -4.5217325709761225,
+      "cold": -0.2387944189090508,
+      "se": 0.054256553593843154,
+      "wald": -4.401208758975586,
       "n_cold": 4101
     },
     {
       "cutoff": 58,
-      "cold": -0.22550408489237336,
-      "se": 0.053904083055613373,
-      "wald": -4.183432350750102,
+      "cold": -0.2195906006452752,
+      "se": 0.05394060096135537,
+      "wald": -4.070970599726843,
       "n_cold": 4303
     },
     {
       "cutoff": 59,
-      "cold": -0.21758443018091272,
-      "se": 0.05356930692722381,
-      "wald": -4.061736891173718,
+      "cold": -0.2117306727090719,
+      "se": 0.05361952865490059,
+      "wald": -3.94876042405719,
       "n_cold": 4521
     },
     {
       "cutoff": 60,
-      "cold": -0.22366097115710729,
-      "se": 0.05345911746823141,
-      "wald": -4.183775972172005,
+      "cold": -0.217563763564028,
+      "se": 0.05352323498092661,
+      "wald": -4.064847045242285,
       "n_cold": 4693
     }
   ],
   "stadium": {
     "games": 3186,
-    "mean_p45": 0.6937619278068298,
-    "anova_F": 108.77229267521962,
+    "mean_p45": 0.6935256074757281,
+    "anova_F": 117.7605903602155,
     "anova_df": [
-      46,
-      3125
+      45,
+      3126
     ],
-    "stadiums_at_least_5": 47
+    "stadiums_at_least_5": 46
   },
   "asset_bytes": {
     "play_by_play_2000.parquet": 13404971,
@@ -1416,5 +1416,35 @@
     "play_by_play_2010.parquet": 19059048,
     "play_by_play_2011.parquet": 19117830
   },
-  "precip_pattern": "rain|snow|shower|drizzle|sleet|flurr|storm"
+  "precip_pattern": "rain|snow|shower|drizzle|sleet|flurr|storm",
+  "dessograss": {
+    "attempts": 201,
+    "seasons": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009
+    ],
+    "turf_flag": 0
+  },
+  "precip_chance": {
+    "baseline": {
+      "name": "precipitation",
+      "estimate": -0.22382293486309482,
+      "se": 0.10407815628584938,
+      "wald": -2.150527477142926,
+      "p": 0.03151351494809178
+    },
+    "chance_counted": {
+      "name": "precipitation",
+      "estimate": -0.0894096470193615,
+      "se": 0.08498613257604495,
+      "wald": -1.0520498381233951,
+      "p": 0.2927766845552315
+    },
+    "chance_attempts": 1101
+  }
 }

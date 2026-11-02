@@ -8,7 +8,7 @@ Quarto skips underscore paths in automatic listings, so this page lists the temp
 
 ## First papers
 
-These are the rebuilds to write first. None of them are pages yet. The scout writes `papers/<name>/BRIEF.md`. The builder turns that brief into the page in one pull request. Details and the substitute-data rule are in `PLAN.md` in the repository.
+These five are the rebuilds to write first. They are still briefs, not pages. Going for Three is a page and is listed under On the site. The scout writes `papers/<name>/BRIEF.md`. The builder turns that brief into the page in one pull request. Details and the substitute-data rule are in `PLAN.md` in the repository.
 
 | Paper | Public data | Substitute? |
 | --- | --- | --- |

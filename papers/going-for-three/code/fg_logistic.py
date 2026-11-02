@@ -24,13 +24,13 @@ PAPER = {
 # Filled from the nflverse refit. Three-decimal display is not these values.
 # See fit_report.json, written by build_fg_table.py.
 REFIT = {
-    "intercept": 5.6094540991,
-    "distance": -0.1061821035,
-    "cold": -0.3545129492,
-    "turf": 0.2915177709,
-    "altitude": 0.6949687582,
-    "precipitation": -0.2249702740,
-    "wind": -0.1659547326,
+    "intercept": 5.6139871232,
+    "distance": -0.1062558424,
+    "cold": -0.3468118695,
+    "turf": 0.2949930939,
+    "altitude": 0.6905322823,
+    "precipitation": -0.2238229349,
+    "wind": -0.1650584236,
 }
 
 COEF_NAMES = (
@@ -149,6 +149,21 @@ def fit_logit(groups):
     return beta, standard_errors
 
 
+def is_turf(surface, stadium=None):
+    """1 if the surface counts as artificial turf on this page.
+
+    nflverse labels Heinz Field, 2003–2009, as ``dessograss`` (201 attempts).
+    This page classifies that label as grass, not turf. Steelers.com, 11 Feb
+    2008, calls the surface DD GrassMaster, "a 97 percent natural grass surface
+    and root system stabilized by synthetic fibers":
+    https://www.steelers.com/news/steelers-will-continue-to-play-on-grass-at-heinz-field-959603
+    """
+    label = surface or "grass"
+    if label == "dessograss" and stadium in (None, "Heinz Field"):
+        return 0
+    return int(label != "grass")
+
+
 def flag_attempt(
     temp,
     wind,
@@ -158,11 +173,12 @@ def flag_attempt(
     game_id,
     weather,
     cold_cutoff=COLD_CUTOFF_F,
+    stadium=None,
 ):
     """Six flags for one kick. Precipitation words are this page's list."""
     outdoors = roof in ("outdoors", "open")
     cold = int(outdoors and temp is not None and temp < cold_cutoff)
-    turf = int((surface or "grass") != "grass")
+    turf = is_turf(surface, stadium)
     altitude = int(home_team == "DEN" or game_id == "2005_04_SF_ARI")
     text = (weather or "").lower()
     has_keyword = re.search(PRECIP_PATTERN, text) is not None
