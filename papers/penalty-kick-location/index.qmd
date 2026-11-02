@@ -913,11 +913,11 @@ The shot file reproduces Table 2. Several printed extras do not sit on that file
 
 Subset A is the four corners and Subset B is the four middles. Full-precision Pearson correlation of shots with conversion is −0.7507 on Subset A, which rounds to −0.751, and −0.9970 on Subset B. Rounding the four corner conversion rates to three decimals before the correlation produces −0.749, the printed Subset A figure. The page keeps the full-precision value.
 
-The t statistics are one unseeded draw. `pk_resampling.R` samples 30 normals centered on the printed correlations, with standard error √((1 − r²) / 2), and it has no seed. It also reuses Subset A's standard error for Subset B. Around that procedure, the draw is centered near −8.76 and −11.66. The printed −7.71 and −10.85 are inside the noise of that draw. They are not a statistic a second run will hit. A standard error built from Subset B's own r = -0.997 would put the center near −100, because that correlation has almost no room left to vary.
+The t statistics are one unseeded draw. `pk_resampling.R` samples 30 normals centered on the printed correlations −0.749 and −0.997, and it has no seed. The standard error is √((1 − r²) / 2), and the script builds that SE from −0.749 for both subsets. The correlation cell prints those centers as −8.76 and −11.66, both with SE 0.469. The printed t values −7.71 and −10.85 are one draw around those centers. They are not a statistic a second run will hit. The same cell then gives each correlation from this file its own SE. That correction prints −8.80 for Subset A (SE 0.467) and −99.35 for Subset B (SE 0.055).
 
 Figure 2's resampling correlation is a similar case. The published loop builds 100 samples of 100 kicks and stacks corner and center into 200 pairs. Repeating it puts the Pearson correlation near +0.80, with a spread of about 0.02. The printed +0.729 is not where that code lands. The page does not search for a seed that prints 0.729.
 
-The Lasso paragraph in the paper gives coefficients 1.154 and −0.387, bootstrapped standard errors 0.024 and 0.007, and a best-fit mean squared error of 0.0022. On this file those coefficients are the standardized Lasso at λ = 0.01 (we get 1.155 and −0.387). The mean squared error of 0.0022 is the ordinary-least-squares error, 0.00222, which is also where Figure 4's cross-validated curve bottoms out, at the small-λ end. At λ = 0.01 the training error is 0.00274, and Figure 4 has already left its minimum. The best λ is not printed. `boot.glmnet` is called in the script and is not defined there, so the standard errors 0.024 and 0.007 are not recomputed here. A nonparametric bootstrap at λ = 0.01 gives standard errors of about 0.035 and 0.007.
+The Lasso paragraph in the paper gives coefficients 1.154 and −0.387, bootstrapped standard errors 0.024 and 0.007, and a best-fit mean squared error of 0.0022. On this file those coefficients are the standardized Lasso at λ = 0.01 (we get 1.155 and −0.387). The mean squared error of 0.0022 is the ordinary-least-squares error, 0.00222, which is also where Figure 4's cross-validated curve bottoms out, at the small-λ end. At λ = 0.01 the training error is 0.00274, and Figure 4 has already left its minimum. The best λ is not printed. `boot.glmnet` is called in the script and is not defined there, so the standard errors 0.024 and 0.007 are not the authors' function rerun. The bootstrap cell below refits the λ = 0.01 lasso on 100 resamples (80 coordinate-descent iterations, seed 20251395) and prints standard errors 0.0342 and 0.0069.
 
 Equation 8 replaces the off-target share with one minus the on-target share and leaves the intercept at −0.794. The substitution also subtracts the off-target coefficient, so the intercept that keeps the same shot-share levels is −1.271. Equation 10 then moves 0.794 the other way from equation 9. Neither slip changes the slope. The 3.12 figure is the ratio of the two Model (1) slopes, and that ratio holds.
 
@@ -1079,9 +1079,90 @@ print("paper prints 1.154 and -0.387, mse 0.0022")
 
 λ = 0.01 is the penalty that matches the printed coefficients. The tiny penalty matches the printed error, and its coefficients are essentially Model (1).
 
+The paper also prints bootstrapped standard errors, 0.024 and 0.007. `boot.glmnet` is called in the authors' script and is not defined there, so those two numbers are not a rerun of their function. This cell is a nonparametric bootstrap of the same λ = 0.01 fit: 100 resamples, 80 iterations, seed 20251395.
+
+```{pyodide}
+#| edit: true
+#| caption: Bootstrap standard errors at lambda 0.01
+# Mirrors lasso_bootstrap_se in code/pk_location.py
+SHOT_URL = "https://raw.githubusercontent.com/sdsander-syr/soccer_pk_shot_location/ff98e29120d8597a6c6b21670fbe43ae7dc816b4/pk_data_shotlevel_chrono.csv"
+
+from pyodide.http import pyfetch
+import csv
+import io
+import math
+import random
+
+response = await pyfetch(SHOT_URL)
+if response.status != 200:
+    raise RuntimeError(f"pinned CSV returned {response.status}")
+kicks = list(csv.DictReader(io.StringIO(await response.string())))
+
+def lasso_coefs(y, conversion, off_target, lam=0.01, iters=80):
+    n = len(y)
+    raw = [conversion, off_target]
+    means = [sum(col) / n for col in raw]
+    scales = []
+    standardized = []
+    for col, mean in zip(raw, means):
+        scale = math.sqrt(sum((v - mean) ** 2 for v in col) / n)
+        scales.append(scale)
+        standardized.append([(v - mean) / scale for v in col])
+    ybar = sum(y) / n
+    centered = [v - ybar for v in y]
+    beta = [0.0, 0.0]
+    for _ in range(iters):
+        for j in (0, 1):
+            other = 1 - j
+            rho = 0.0
+            column = standardized[j]
+            other_col = standardized[other]
+            other_b = beta[other]
+            for i in range(n):
+                rho += column[i] * (centered[i] - other_col[i] * other_b)
+            z = rho / n
+            if z > lam:
+                beta[j] = z - lam
+            elif z < -lam:
+                beta[j] = z + lam
+            else:
+                beta[j] = 0.0
+    return beta[0] / scales[0], beta[1] / scales[1]
+
+def bootstrap_se(rows, replicates=100, iters=80, seed=20251395):
+    rng = random.Random(seed)
+    n = len(rows)
+    y = [float(row["prop_shots_other"]) for row in rows]
+    conversion = [float(row["conversion_rate_other"]) for row in rows]
+    off_target = [float(row["prop_nc_missed_other"]) for row in rows]
+    conv_coefs = []
+    off_coefs = []
+    for _ in range(replicates):
+        idx = [rng.randrange(n) for _ in range(n)]
+        yb = [y[i] for i in idx]
+        cb = [conversion[i] for i in idx]
+        mb = [off_target[i] for i in idx]
+        b_conv, b_off = lasso_coefs(yb, cb, mb, iters=iters)
+        conv_coefs.append(b_conv)
+        off_coefs.append(b_off)
+
+    def sample_sd(values):
+        mean = sum(values) / len(values)
+        var = sum((value - mean) ** 2 for value in values) / (len(values) - 1)
+        return math.sqrt(var)
+
+    return sample_sd(conv_coefs), sample_sd(off_coefs)
+
+conversion_se, off_target_se = bootstrap_se(kicks)
+print("replicates 100, iters 80, seed 20251395, lambda 0.01")
+print(f"conversion se {conversion_se:.4f}")
+print(f"off-target se {off_target_se:.4f}")
+print("paper prints 0.024 and 0.007")
+```
+
 ### Partition correlations
 
-The classical game wants these correlations at zero. The statistical game wants them positive. Both subsets are negative. The <button type="button" class="glossary-term" data-term="bootstrap">bootstrap</button> in the repository is 30 normal draws around the correlation, not a resample of the eight cells, and it is unseeded.
+The classical game wants these correlations at zero. The statistical game wants them positive. Both subsets are negative. The <button type="button" class="glossary-term" data-term="bootstrap">bootstrap</button> in the repository is 30 normal draws around the printed correlations, not a resample of the eight cells, and it is unseeded. The cell prints that script first, reusing Subset A's standard error for Subset B, and then the correction that gives each correlation from this file its own standard error.
 
 ```{pyodide}
 #| edit: true
@@ -1130,14 +1211,37 @@ r_a = correlation(corners)
 r_b = correlation(middles)
 print(f"subset A (corners) {r_a:.3f}")
 print(f"subset B (middles) {r_b:.3f}")
+print(f"subset A full precision {r_a:.4f}")
+print(f"subset B full precision {r_b:.4f}")
 
-def expected_t(correlation, n_draws=30, n_cells=4):
-    se = math.sqrt((1.0 - correlation ** 2) / (n_cells - 2))
-    return se, correlation / (se / math.sqrt(n_draws))
+def standard_error(correlation, n_cells=4):
+    return math.sqrt((1.0 - correlation ** 2) / (n_cells - 2))
 
-for label, r in (("A", r_a), ("B", r_b)):
-    se, t_center = expected_t(r)
-    print(f"subset {label}: se {se:.3f}, draw centered near t {t_center:.2f}")
+def t_center(correlation, se, n_draws=30):
+    return correlation / (se / math.sqrt(n_draws))
+
+# pk_resampling.R hardcodes these r values and sets se_r2 from r1.
+paper_r_a = -0.749
+paper_r_b = -0.997
+paper_se = standard_error(paper_r_a)
+print("pk_resampling.R, printed r, Subset A SE reused for B")
+print(
+    f"script subset A: r {paper_r_a:.3f}, se {paper_se:.3f}, "
+    f"draw centered near t {t_center(paper_r_a, paper_se):.2f}"
+)
+print(
+    f"script subset B: r {paper_r_b:.3f}, se {paper_se:.3f}, "
+    f"draw centered near t {t_center(paper_r_b, paper_se):.2f}"
+)
+print("correction, this file's r, each with its own SE")
+print(
+    f"correction subset A: r {r_a:.3f}, se {standard_error(r_a):.3f}, "
+    f"draw centered near t {t_center(r_a, standard_error(r_a)):.2f}"
+)
+print(
+    f"correction subset B: r {r_b:.3f}, se {standard_error(r_b):.3f}, "
+    f"draw centered near t {t_center(r_b, standard_error(r_b)):.2f}"
+)
 print("paper prints r -0.749 and -0.997, t -7.71 and -10.85")
 ```
 

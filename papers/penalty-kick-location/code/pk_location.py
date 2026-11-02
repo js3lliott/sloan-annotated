@@ -391,15 +391,76 @@ def _rebuild_leave_one_out(kicks):
     return rebuilt
 
 
-def resampling_t_expectation(correlation, n_draws=30, n_cells=4):
-    """The t the authors' normal draws are centered on, before sampling noise.
+# Printed correlations in pk_resampling.R. The script has no seed, and it
+# builds Subset B's standard error from r1 rather than from r2.
+PAPER_SUBSET_A_R = -0.749
+PAPER_SUBSET_B_R = -0.997
+RESAMPLE_DRAWS = 30
+RESAMPLE_CELLS = 4
 
-    pk_resampling.R draws n_draws normals and has no seed, so the printed
-    t statistics are one draw. The standard error uses n_cells - 2.
+# Nonparametric bootstrap of the λ = 0.01 lasso. Light enough for Pyodide.
+LASSO_BOOT_LAMBDA = 0.01
+LASSO_BOOT_REPLICATES = 100
+LASSO_BOOT_ITERS = 80
+LASSO_BOOT_SEED = 20251395
+
+
+def resampling_standard_error(correlation, n_cells=RESAMPLE_CELLS):
+    """sqrt((1 - r^2) / (n - 2)), with n the number of cells."""
+    return math.sqrt((1.0 - correlation ** 2) / (n_cells - 2))
+
+
+def resampling_t_center(correlation, standard_error, n_draws=RESAMPLE_DRAWS):
+    """Where the mean of n_draws normals sits, divided by its standard error.
+
+    This is the center of the t statistic before the random draw. The authors'
+    script does not set a seed, so a single run will not hit this number.
     """
-    se = math.sqrt((1.0 - correlation ** 2) / (n_cells - 2))
-    expected_t = correlation / (se / math.sqrt(n_draws))
-    return {"se": se, "expected_t": expected_t}
+    return correlation / (standard_error / math.sqrt(n_draws))
+
+
+def resampling_t_expectation(correlation, n_draws=RESAMPLE_DRAWS, n_cells=RESAMPLE_CELLS):
+    """Center of the t draw when the standard error is built from this r."""
+    se = resampling_standard_error(correlation, n_cells)
+    return {"se": se, "expected_t": resampling_t_center(correlation, se, n_draws)}
+
+
+def lasso_bootstrap_se(
+    kicks,
+    lam=LASSO_BOOT_LAMBDA,
+    replicates=LASSO_BOOT_REPLICATES,
+    iters=LASSO_BOOT_ITERS,
+    seed=LASSO_BOOT_SEED,
+):
+    """Sample standard deviation of the λ = 0.01 coefficients over resamples.
+
+    Each replicate draws 536 rows with replacement and refits the standardized
+    lasso. The coordinate descent uses fewer iterations than lasso_path_point;
+    on this file that does not move the printed standard errors.
+    """
+    rng = random.Random(seed)
+    n = len(kicks)
+    conversion_coefs = []
+    off_target_coefs = []
+    for _ in range(replicates):
+        sample = [kicks[rng.randrange(n)] for _ in range(n)]
+        point = lasso_path_point(sample, lam, iters=iters)
+        conversion_coefs.append(point["conversion"])
+        off_target_coefs.append(point["off_target"])
+
+    def sample_sd(values):
+        mean = sum(values) / len(values)
+        var = sum((value - mean) ** 2 for value in values) / (len(values) - 1)
+        return math.sqrt(var)
+
+    return {
+        "replicates": replicates,
+        "iters": iters,
+        "seed": seed,
+        "lambda": lam,
+        "conversion_se": sample_sd(conversion_coefs),
+        "off_target_se": sample_sd(off_target_coefs),
+    }
 
 
 def main():
