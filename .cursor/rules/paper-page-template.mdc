@@ -1,0 +1,24 @@
+---
+description: Required sections, learning layers, and interactive patterns for a paper page
+globs: papers/**/*.qmd
+alwaysApply: false
+---
+
+Copy `papers/_template/index.qmd`. Keep these level-2 headings, in order: Intro, The question, The data, Guided build, A real play, Check yourself, Paper figure and our rebuild, What held up and what didn't, Advanced, The original.
+
+Learning layers on that same page:
+
+- Intro is layer 1 and includes an animation of the paper's question.
+- Guided build is layer 2: method steps, a `{pyodide}` cell, a fill-in-the-blank exercise, and a slider on one assumption.
+- Advanced is layer 3: a sensitivity, baseline, or fragile case. Not a repeat of the intro.
+
+Reuse the template's patterns instead of new widgets:
+
+- Fill-in-the-blank: `{pyodide}` with `#| exercise:`, a `______` blank, a `{.hint}` div, a `#| solution: true` cell, and a `#| check: true` cell.
+- Slider: `viewof` `Inputs.range` in `{ojs}`, driving a Plotly chart.
+- Real play: an `{ojs}` frame index and a D3 drawing. Use a real play from the page's data, or label a substitute sequence.
+- Quick check: `form.quick-check` with a unique radio `name` and `data-answer`.
+- Glossary: `button.glossary-term` plus `data-term` matching `assets/glossary.json`.
+- Figures: a `.grid.figure-compare` with the paper panel and our panel side by side.
+
+`TODO(paper)` is the only placeholder token. Remove every one before the paper PR is ready. Do not remove them from `papers/_template/`.

@@ -1,0 +1,14 @@
+---
+description: What Sloan Annotated is, the fixed layout, and who is allowed to merge
+alwaysApply: true
+---
+
+Sloan Annotated is a Quarto website that rebuilds MIT Sloan Sports Analytics Conference papers for learning. Python runs in the browser via Pyodide (vendored Quarto Live). Charts are Plotly or D3. The site deploys to GitHub Pages from `main`.
+
+- Follow `PLAN.md` and `papers/_template/`. Do not invent a second page layout.
+- Paper directories are `papers/<name>/` with a lowercase hyphenated name that does not start with `_`.
+- Runnable code is `{pyodide}`. Do not add `{python}` cells. They execute during `quarto render`.
+- The project format stays `html`. This Quarto Live release does not provide `live-html`.
+- Jordan approves every merge. Do not merge, and do not enable auto-merge.
+- A paper change is one pull request: brief, page, code, data notes, and figures. Do not restyle the site in that PR.
+- `quarto render` must pass before the PR is ready. A green check is not a merge.

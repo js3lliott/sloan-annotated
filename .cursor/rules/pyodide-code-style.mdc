@@ -1,0 +1,16 @@
+---
+description: Style for Python that runs in Pyodide cells and in papers/<name>/code
+globs: papers/**/*.py,papers/**/*.qmd
+alwaysApply: false
+---
+
+Pyodide cells and the matching module in `code/` follow the same names and the same constants.
+
+- Python 3. Standard library unless the page YAML lists packages under `pyodide.packages`. Do not import a package the page does not declare.
+- No network calls, no `input()`, no reads of a path that is not mounted. The template cells repeat the function so they run with an empty `pyodide.resources`.
+- One step of the method per cell. Name the function for the step. A comment names the file it mirrors.
+- Prefer plain functions that return numbers or small dicts. Print a labelled result the reader can check.
+- Keep the formula in the cell, the slider's Observable code, and the module identical. If you change a coefficient, change all three.
+- Exercise blanks are `______` (six or more underscores) and the check cell returns `{ "correct": bool, "message": str }`. Compare with a tolerance, not raw float equality, when the value crosses the JS boundary.
+- Do not hide the model behind a wheel or a `{python}` cell that runs at render time.
+- Keep `engine: markdown` on the page. Quarto's Jupyter engine will try to execute `{pyodide}` cells during `quarto render` if that line is removed.

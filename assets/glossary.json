@@ -1,0 +1,34 @@
+{
+  "xg": {
+    "term": "xG",
+    "definition": "Expected goals. The probability a shot becomes a goal, given only the information the model is allowed to see."
+  },
+  "tracking-data": {
+    "term": "tracking data",
+    "definition": "Positions of the players and the ball sampled many times a second. This is not the same thing as a list of tagged events."
+  },
+  "event-data": {
+    "term": "event data",
+    "definition": "A log of discrete actions such as passes, carries, and shots, usually with a location. Freeze frames, when present, are a snapshot around one event, not a full tracking feed."
+  },
+  "substitute-data": {
+    "term": "substitute data",
+    "definition": "A public dataset used in place of the data the paper actually fit. A page that does this must show the Rebuilt on substitute data callout and say what does not transfer."
+  },
+  "epa": {
+    "term": "EPA",
+    "definition": "Expected points added. The change in expected points from the start of a play to the end of it."
+  },
+  "epv": {
+    "term": "EPV",
+    "definition": "Expected possession value. A number for how a possession is expected to end, updated as the players and the ball move."
+  },
+  "big-data-bowl": {
+    "term": "Big Data Bowl",
+    "definition": "The NFL's public analytics competition. Some years release player-tracking files that a paper can be rebuilt on directly."
+  },
+  "statcast": {
+    "term": "Statcast",
+    "definition": "MLB's tracking of the ball and the players. Baseball Savant publishes a public slice of it, including pitch-level and batted-ball fields."
+  }
+}
