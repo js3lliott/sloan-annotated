@@ -19,6 +19,46 @@
     "term": "EPA",
     "definition": "Expected points added. The change in expected points from the start of a play to the end of it."
   },
+  "logistic-regression": {
+    "term": "logistic regression",
+    "definition": "A model that writes the log-odds of a yes-or-no outcome as a straight-line sum of the inputs, then turns that sum back into a probability."
+  },
+  "log-odds": {
+    "term": "log-odds",
+    "definition": "The natural log of p / (1 − p), where p is a probability. Logistic regression models this, not the probability itself."
+  },
+  "wald-statistic": {
+    "term": "Wald statistic",
+    "definition": "A significance statistic. In this paper's Table 1 it is about the coefficient divided by its standard error."
+  },
+  "p-value": {
+    "term": "p-value",
+    "definition": "The chance of an effect this large if the coefficient were truly zero. The paper keeps a variable when this is below 0.05."
+  },
+  "added-points": {
+    "term": "added points",
+    "definition": "3 × (made − predicted probability), for one field goal. Made is 1 or 0. Positive means the kick beat the probability the model gave it."
+  },
+  "icing": {
+    "term": "icing",
+    "definition": "A timeout called just before the kick. The paper counts a timeout by either coach. It did not find an effect, and this page does not rebuild that test."
+  },
+  "situational-pressure": {
+    "term": "situational pressure",
+    "definition": "Score margin and time left, combined into a pressure level. The paper's Table A.1 tries several versions. None were significant, and this page does not rebuild them."
+  },
+  "artificial-turf": {
+    "term": "artificial turf",
+    "definition": "A playing surface this page does not count as grass. Heinz Field's nflverse label dessograss, 201 attempts from 2003 to 2009, is counted as grass: Steelers.com calls that DD GrassMaster surface 97 percent natural grass."
+  },
+  "altitude-flag": {
+    "term": "altitude flag",
+    "definition": "A game at 4,000 feet or above. In 2000–2011 that is Denver, plus the 2 October 2005 game in Mexico City (nflverse game_id 2005_04_SF_ARI)."
+  },
+  "nflverse": {
+    "term": "nflverse",
+    "definition": "An open, community-maintained NFL play-by-play dataset, licensed CC-BY-4.0. It is not the ArmchairAnalysis file this paper fit."
+  },
   "epv": {
     "term": "EPV",
     "definition": "Expected possession value. A number for how a possession is expected to end, updated as the players and the ball move."

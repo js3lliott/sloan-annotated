@@ -57,3 +57,5 @@ The [paper list](papers/index.qmd) names the first five rebuilds in build order.
 A scout writes `papers/<name>/BRIEF.md`. A builder turns that brief into code and one interactive page, in one pull request. A checker reads the page against the paper. Jordan approves every merge. Coding agents do not merge.
 
 The repository README has the preview command and the directory map. `PLAN.md` is the longer spec.
+
+[Going for Three](papers/going-for-three/index.qmd) rebuilds Clark, Johnson, and Stimpson (2013) on nflverse field goals.

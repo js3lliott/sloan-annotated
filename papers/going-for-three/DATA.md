@@ -26,13 +26,18 @@
 - seasons: 2000–2011 regular season and postseason. Sample: 11,893 field-goal attempts (11,419 REG, 474 POST): 9,605 made, 2,011 missed, 277 blocked.
 - commit_policy:
   - Do not commit the raw parquet files.
-  - A small derived file is allowed under CC-BY-4.0 with attribution. The proposed file is `papers/going-for-three/data/fg_agg_2000_2011.csv`: 726 rows, 14,338 bytes; columns dist, cold, turf, alt, precip, windy, sum (made), count.
-  - Optionally also a per-kick file of about 690 KB. The builder regenerates it from the URLs above with `code/`, not by hand.
+  - Small derived files are allowed under CC-BY-4.0 with attribution. `code/build_fg_table.py` regenerates them from the URLs above. Byte sizes in the table were re-checked when that script downloaded the files; they matched.
+  - `data/fg_agg_2000_2011.csv`: 724 rows. Columns `dist, cold, turf, alt, precip, windy, made, n`. `made` is the number of makes and `n` is the number of attempts. This is the table the logistic fit uses.
+  - `data/fg_by_temp.csv`: temperature left blank unless the cold rule can see it, so the cold cutoff can be refit. Same other flags.
+  - `data/kicker_ranks.csv`, `data/season_added_points.csv`, `data/stadium_difficulty.csv`: summaries from that fit. `data/fit_report.json` is the script's audit of the headline comparisons.
+  - No per-kick file is committed.
 - derived_rules:
   - cold = temp < 50 and roof outdoors/open;
-  - turf = surface ≠ grass;
+  - turf = surface ≠ grass, except Heinz Field `dessograss`. Those 201 attempts, seasons 2003–2009, are grass on this page. That is our classification. Steelers.com (11 Feb 2008) calls DD GrassMaster "a 97 percent natural grass surface and root system stabilized by synthetic fibers" (https://www.steelers.com/news/steelers-will-continue-to-play-on-grass-at-heinz-field-959603);
   - alt = home_team DEN, or game_id 2005_04_SF_ARI;
-  - precip = weather matches rain|snow|shower|drizzle|sleet|flurr|storm, without "chance", outdoors;
+  - precip = weather matches rain|snow|shower|drizzle|sleet|flurr|storm, without "chance", outdoors. That word list is ours. The paper does not print one;
   - windy = wind ≥ 10, outdoors.
   - temp/wind are missing for 23.6% of attempts; treat these as not cold and not windy.
+  - A make is `field_goal_result == made`. Missed and blocked are not makes.
+  - Kicker ranks group on `kicker_player_id`, because nflverse spells some names with and without a space.
 - credit: "Play-by-play data: nflverse (github.com/nflverse/nflverse-data), licensed CC-BY-4.0."

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 460" role="img" aria-label="Figure 1 redrawn from Table 1">
+  <rect width="680" height="460" fill="#f7f4ee"/>
+  <text x="28" y="36" fill="#1b2430" font-family="Georgia, serif" font-size="22">Figure 1 redrawn from Table 1</text>
+  <text x="28" y="58" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="13">Printed coefficients. The paper says 53% at 45 yards. These coefficients give the rate below.</text>
+  <line x1="70" y1="360" x2="610" y2="360" stroke="#1b2430" stroke-width="1.4"/>
+  <line x1="70" y1="110" x2="70" y2="360" stroke="#1b2430" stroke-width="1.4"/>
+  <polyline fill="none" stroke="#1b2430" stroke-width="3" points="70.0,119.0 81.5,120.0 93.0,121.1 104.5,122.2 116.0,123.5 127.4,125.0 138.9,126.5 150.4,128.2 161.9,130.1 173.4,132.2 184.9,134.4 196.4,136.8 207.9,139.5 219.4,142.4 230.9,145.5 242.3,148.8 253.8,152.4 265.3,156.3 276.8,160.4 288.3,164.8 299.8,169.5 311.3,174.4 322.8,179.6 334.3,185.1 345.7,190.8 357.2,196.7 368.7,202.7 380.2,209.0 391.7,215.4 403.2,221.9 414.7,228.5 426.2,235.1 437.7,241.7 449.1,248.3 460.6,254.8 472.1,261.2 483.6,267.5 495.1,273.6 506.6,279.5 518.1,285.1 529.6,290.6 541.1,295.8 552.6,300.7 564.0,305.4 575.5,309.7 587.0,313.9 598.5,317.7 610.0,321.3"/><polyline fill="none" stroke="#1f6b4a" stroke-width="3" points="70.0,114.3 81.5,114.8 93.0,115.3 104.5,115.9 116.0,116.5 127.4,117.2 138.9,118.0 150.4,118.9 161.9,119.8 173.4,120.9 184.9,122.0 196.4,123.3 207.9,124.7 219.4,126.2 230.9,127.9 242.3,129.8 253.8,131.8 265.3,134.0 276.8,136.4 288.3,139.0 299.8,141.8 311.3,144.9 322.8,148.2 334.3,151.8 345.7,155.6 357.2,159.7 368.7,164.0 380.2,168.6 391.7,173.5 403.2,178.7 414.7,184.1 426.2,189.7 437.7,195.6 449.1,201.6 460.6,207.9 472.1,214.3 483.6,220.7 495.1,227.3 506.6,233.9 518.1,240.6 529.6,247.1 541.1,253.7 552.6,260.1 564.0,266.4 575.5,272.5 587.0,278.4 598.5,284.1 610.0,289.6"/>
+  <circle cx="380.2" cy="209.0" r="5.5" fill="#b64a28"/>
+  <text x="320" y="392" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="13">kick distance (yards)</text>
+  <text x="22" y="250" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="13" transform="rotate(-90 22 250)">make probability</text>
+  <text x="78" y="124" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="12">1</text>
+  <text x="78" y="249" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="12">0.5</text>
+  <text x="78" y="374" fill="#5c564c" font-family="Helvetica, sans-serif" font-size="12">0</text>
+  <line x1="64" y1="235" x2="70" y2="235" stroke="#1b2430"/>
+  <text x="86" y="430" fill="#1b2430" font-family="Helvetica, sans-serif" font-size="13">45 yards in snow and wind: 60.4%. Mild weather: 76.5%. Difference +16.2 points.</text>
+</svg>
