@@ -33,12 +33,31 @@ A Quarto website that rebuilds MIT Sloan Sports Analytics Conference papers one 
 
 ## Data and licensing
 
-Allowed sources for the first wave: StatsBomb open data, a named NFL Big Data Bowl release, nflverse, Baseball Savant. Read the license before copying anything into the repo.
+Allowed sources for the first wave are the eight below. The first five papers, in order, are in `PLAN.md` and `papers/index.qmd`. Read the license before copying anything into the repo.
+
+Files without a clear license are linked at a pinned commit and fetched at build or run time, never copied into the repo.
 
 - Do not commit raw tracking dumps, full Statcast extracts, or the StatsBomb open-data tree.
 - `DATA.md` records `substitute: yes` or `substitute: no`, the paper's source, our source, the license, and the sample.
-- A small derived file is allowed only when the license permits it and `DATA.md` names the file.
+- A small derived file is allowed only when the license permits it and `DATA.md` names the file. A source file with no clear license is not that kind of file.
 - Paper figures: redraw, or reproduce only with permission. Cite the figure number. Do not drop a PDF screenshot in `figures/` and call it fair.
+
+License notes for the last four were read from each source's own page on 2 November 2026. Pins are the commits already in that paper's `DATA.md`.
+
+1. [StatsBomb open data](https://github.com/statsbomb/open-data). Follow the license in that repository. Credit StatsBomb as that license requires.
+2. A named NFL Big Data Bowl release. Follow that release's data terms, link the release in `DATA.md`, and name it on the page. Do not commit the tracking files.
+3. [nflverse](https://github.com/nflverse). nflverse-data is CC-BY-4.0. Credit: `Play-by-play data: nflverse (github.com/nflverse/nflverse-data), licensed CC-BY-4.0.`
+4. [Baseball Savant](https://baseballsavant.mlb.com/). MLB's terms. Do not commit a bulk download. Credit: `Pitch data: MLB Advanced Media via Baseball Savant (baseballsavant.mlb.com).`
+5. [Penalty-kick authors' repository](https://github.com/sdsander-syr/soccer_pk_shot_location), commit `ff98e29120d8597a6c6b21670fbe43ae7dc816b4`. No license is stated: the repository page reports none, and that commit has no license file. Credit: `Penalty data: Uribe, Sanders, Ehrlich, Reade & Singleton (2025), github.com/sdsander-syr/soccer_pk_shot_location.`
+6. [OptimalDarts](https://github.com/wangchunsem/OptimalDarts), commit `f68bedcc592b4bcfda69f6d72d69aede91ebaff1`. No license is stated: the repository page reports none, and `readme.txt` at that commit states none. Credit: `Skill models: M. B. Haugh & C. Wang, 'Play like the pros? Solving the game of darts as a dynamic zero sum game' (github.com/wangchunsem/OptimalDarts).` Do not paste the repository's code into `code/`.
+7. [Metrica Sports sample tracking data](https://github.com/metrica-sports/sample-data), commit `e706dd506b360d69d9d123d5b8026e7294b13996`. No license file. The README at that commit, under "Legal stuff", states: "Please be responsible with the use of this data." and "If you use it for anything public, please aknowledge the source." Credit: `Tracking and event data: Metrica Sports sample data (github.com/metrica-sports/sample-data). Players and teams are anonymized.`
+8. [Retrosheet](https://www.retrosheet.org/). Terms: [notice.txt](https://www.retrosheet.org/notice.txt). Game logs: [the game-log index](https://www.retrosheet.org/gamelogs/). The notice says recipients may make any desired use of the information, including a commercial product, if this statement appears prominently. Use it verbatim as the credit line:
+
+```
+     The information used here was obtained free of
+     charge from and is copyrighted by Retrosheet.  Interested
+     parties may contact Retrosheet at "www.retrosheet.org".
+```
 
 ## Substitute data
 
