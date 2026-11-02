@@ -17,3 +17,9 @@ These are the rebuilds to write first. None of them are pages yet. The scout wri
 | [Learning Feature Representations from Football Tracking](https://www.sloansportsconference.com/research-papers/learning-feature-representations-from-football-tracking), Michael Horton | 2019 NFL Big Data Bowl tracking release | No, if the page uses that release. Another feed would have to be labelled. |
 | [Learning Contextual Event Embeddings to Predict Player Performance in the MLB](https://www.sloansportsconference.com/research-papers/learning-contextual-event-embeddings-to-predict-player-performance-in-the-mlb), Connor Heaton and Prasenjit Mitra | [Baseball Savant](https://baseballsavant.mlb.com/) pitch-level data | Only if the paper's file is not the public Savant extract. The brief has to say which. |
 | [Turning the Tide: Big Plays and Psychological Momentum in the NFL](https://hsl.mit.edu/biblio/turning-tide-big-plays-and-psychological-momentum-nfl-poster/), A. W. Johnson, A. J. Stimpson, and T. Clark, 2012 | [nflverse](https://github.com/nflverse) play-by-play | Yes. nflverse is a later public charting, not the authors' file. |
+
+## On the site
+
+| Paper | Page | Substitute? |
+| --- | --- | --- |
+| Going for Three: Predicting the Likelihood of Field Goal Success with Logistic Regression, Torin K. Clark, Aaron W. Johnson, and Alexander J. Stimpson, 2013 | [Going for Three](going-for-three/index.qmd) | Yes. nflverse play-by-play stands in for ArmchairAnalysis. |
